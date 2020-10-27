@@ -50,9 +50,10 @@
     }
   ]
   //produtor
-  const produtors = [
+  const producers = [
   {
-    "user_id": 1
+    "user_id": 1,
+    "company": "Rede Grobu"
   }
 ]
 const disponibilidade =
