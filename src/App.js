@@ -1,5 +1,13 @@
-import React from 'react'
+import React from 'react';
+import Home from './Components/Home/Home';
+
 
 export default function app() {
-  return <h1>Olá Time</h1>
+  return (
+    <>
+  <Home />
+  </>
+  
+  )
+  
 }
