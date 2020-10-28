@@ -56,21 +56,21 @@ const getDisponibilidade = new Promise((resolve, reject) => {
   setTimeout(function () {
     resolve([
       {
-        start_Date: new Date(),
-        end_date: "date",
+        start_Date: new Date(Date.now() - 1000 * 60 * 60 * 24 * 7),
+        end_date: new Date(Date.now() + 1000 * 60 * 60 * 24 * 7),
         actor_id: 1,
         producer_id: 1,
       },
       {
-        start_Date: "date",
-        end_date: "date",
+        start_Date: new Date(Date.now()),
+        end_date: new Date(Date.now() + 1000 * 60 * 60 * 24 * 7),
         actor_id: 2,
         producer_id: 1,
       },
       {
-        start_Date: "date",
-        end_date: "date",
-        actor_id: 1,
+        start_Date: new Date(Date.now() + 1000 * 60 * 60 * 24 * 7),
+        end_date: new Date(Date.now() + 1000 * 60 * 60 * 24 * 14),
+        actor_id: 3,
         producer_id: 1,
       },
     ]);
