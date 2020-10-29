@@ -1,11 +1,19 @@
+.home_producer_container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+.home_producer_container h1 {
+  margin: 0;
+  padding: 0;
+}
 /* image 3 */
 .home_producer_background {
-  position: absolute;
-  width: 1132px;
-  height: 964px;
-  left: 308px;
-  top: 60px;
-
+  /* position: absolute; */
+  /* height: 964px; */
+  /* left: 308px; */
+  /* top: 60px; */
+  flex: 1;
   background: linear-gradient(
       180deg,
       rgba(0, 0, 0, 0.72) 63.16%,
@@ -13,4 +21,10 @@
     ),
     url("../../assets/images/home_chairs.png");
   mix-blend-mode: normal;
+}
+
+.home_producer_sidebar {
+  background-color: #f4f4f4;
+  width: 314px;
+  height: 100%;
 }
