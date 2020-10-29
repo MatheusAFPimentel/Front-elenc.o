@@ -11,6 +11,6 @@
       rgba(0, 0, 0, 0.72) 63.16%,
       rgba(0, 0, 0, 0) 100%
     ),
-    url(image.png);
+    url("../../assets/images/home_chairs.png");
   mix-blend-mode: normal;
 }
