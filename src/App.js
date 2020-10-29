@@ -1,5 +1,11 @@
-import React from 'react'
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import Routes from "./Routes";
 
 export default function app() {
-  return <h1>Olá Time</h1>
+  return (
+    <BrowserRouter>
+      <Routes></Routes>
+    </BrowserRouter>
+  );
 }

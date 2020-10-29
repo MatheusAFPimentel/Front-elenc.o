@@ -1,7 +1,7 @@
 import React from "react";
 import "./sobre.css";
-import CardTime from "../CardTime/CardTime";
-import time from "./time";
+import CardTime from "../../Components/CardTime/CardTime";
+import time from "../../Components/CardTime/time";
 
 function Sobre() {
   return (
