@@ -1,5 +1,12 @@
-import React from 'react'
+import React from 'react';
+import Home from '../src/Pages/Home/Home';
+import '../src/Reset.css';
+import '../src/App.css';
 
 export default function app() {
-  return <h1>Olá Time</h1>
+  return(
+    <div>
+      <Home/>
+    </div>
+  )
 }
