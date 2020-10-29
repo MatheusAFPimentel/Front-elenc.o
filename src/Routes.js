@@ -4,8 +4,8 @@ import Home from "./Pages/Home/Home";
 import MeuPerfilAtor from "./Pages/MeuPerfilAtor/MeuPerfilAtor";
 import MeuPerfilProdutor from "./Pages/MeuPerfilProdutor/MeuPerfilProdutor";
 import ProducerHome from "./Pages/ProducerHome";
-import Signup from "./Pages/Signup";
-import Sobre from "./pages/Sobre/Sobre";
+import Signup from "./Pages/Signup/Signup";
+import Sobre from "./Pages/Sobre/Sobre";
 import PainelResultados from "./Pages/PainelResultados/PainelResultados";
 
 const Routes = () => {
