@@ -7,8 +7,8 @@ function Home() {
     <div className='home'>
       <img id='logo' src={logo} alt='logo elenc.o'/>
       <div className='form_login'>
-        <form>
           <h2 className='titulo_login'>Login</h2>
+        <form>
           <label>Email</label> <br/>
           <input type="email" placeholder="insira seu email" required /> <br/>
           <label>Senha</label><br/>
@@ -28,3 +28,5 @@ function Home() {
     </div>
   );
 }
+
+export default Home;
