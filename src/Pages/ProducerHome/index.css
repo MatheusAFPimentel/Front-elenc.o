@@ -3,17 +3,12 @@
   height: 100vh;
   width: 100%;
 }
-.home_producer_container h1 {
-  margin: 0;
-  padding: 0;
-}
-/* image 3 */
+
 .home_producer_background {
-  /* position: absolute; */
-  /* height: 964px; */
-  /* left: 308px; */
-  /* top: 60px; */
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: linear-gradient(
       180deg,
       rgba(0, 0, 0, 0.72) 63.16%,
@@ -23,6 +18,17 @@
   mix-blend-mode: normal;
 }
 
+.home_producer_background h1 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 56px;
+  text-align: center;
+  letter-spacing: -0.015em;
+
+  color: #ffffff;
+}
 .home_producer_sidebar {
   background-color: #f4f4f4;
   width: 314px;
