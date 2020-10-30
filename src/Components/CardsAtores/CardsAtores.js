@@ -1,5 +1,5 @@
 import React from "react";
-import "./CardsAtores.css";
+import "./cardsAtores.css";
 import {
   Card,
   CardImg,

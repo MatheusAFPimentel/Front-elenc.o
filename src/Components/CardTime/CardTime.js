@@ -1,5 +1,5 @@
 import { CardText, CardBody, CardTitle, Card, CardImg } from "reactstrap";
-import "./CardTime.css";
+import "./cardTime.css";
 
 function CardTime(props) {
   return (
