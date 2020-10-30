@@ -25,7 +25,14 @@ const ProducerHome = (props) => {
               <label htmlFor="">Data de fim</label>
               <input type="date" />
             </div>
+            <button type="submit">Buscar</button>
           </form>
+        </main>
+        <header>
+          <h2>Reservas</h2>
+        </header>
+        <main>
+          <p>Você ainda não fez nenhuma reserva</p>
         </main>
       </div>
       <div className="home_producer_background">
