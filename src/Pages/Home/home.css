@@ -1,42 +1,20 @@
+/* TAGS */
+
 label, input {
     margin: 5px 0 !important;
 }
 
 input {
-    padding: 10px;
+    padding: 15px;
     text-transform: uppercase;
     width: 70%;
 }
 
+/* IDS */
+
 #logo {
     width: 90%;
-    margin: 40px 20px 20px;
-    align-self: center;
-}
-
-.home {
-    background: url(../../assets/images/claquete.png) no-repeat;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
-
-.titulo_login {
-    font-size: 5vh;
-    margin: 10px 0 15px;
-}
-
-.form_login {
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 5px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
-    margin: 50px 20px;
+    margin: 40px 20px 10px;
     align-self: center;
 }
 
@@ -46,12 +24,54 @@ input {
     border: none;
     padding: 15px 30px;
     margin: 10px 0;
-    font-weight: bold;
+    font-weight: 700;
+    text-transform: uppercase;
     width: 70%;
+    transition: 0.2s ease-in-out;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+#botao_entrar:hover {
+    box-shadow: 5px 5px #D44D5C;
+    color: #D44D5C;
+    background-color: #ffffff;
+  }
+
+/* CLASSES */
+
+.home {
+    background: url(../../assets/images/claquete.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-size: 3vh;
+}
+
+.titulo_login {
+    font-size: 5vh;
+    margin: 10px 0 20px;
+}
+
+.form_login {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 50px 20px;
+    align-self: center;
 }
 
 .link_cadastro {
     text-decoration: none;
+    font-size: 2.2vh;
+    max-width: 122px;
+    margin: 3px;
     color: #D44D5C;
     text-transform: uppercase;
 }
@@ -61,4 +81,63 @@ input {
     flex-direction: row;
     text-align: center;
     margin-top: 20px;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 768px) {
+    label, input {
+        font-size: 2vh !important;
+        margin: 15px !important;
+    }
+
+    #botao_entrar {
+        font-size: 2vh;
+    }
+    
+    #logo {
+        max-width: 70%;
+    }
+
+    .link_cadastro {
+        max-width: 150px;
+        margin: 10px 20px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .home {
+        background: url(../../assets/images/claquete2.png) no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    #logo {
+        max-width: 30%;
+        align-self: flex-start;
+        padding: 0;
+        margin-left: 40px;
+    }
+
+    .form_login {
+        align-self: flex-start;
+        margin-left: 70px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .form_login {
+        align-self: flex-start;
+        margin-left: 100px;
+        padding: 40px 30px;
+    }
+
+    #logo {
+        margin-left: 55px;
+    }
+
+    .link_cadastro {
+        max-width: 200px;
+        margin: 10px 20px;
+    }
 }
