@@ -1,4 +1,4 @@
-const getProducers = new Promise((resolve, reject) => {
+export const getProducers = new Promise((resolve, reject) => {
   setTimeout(function () {
     resolve([
       {
@@ -12,7 +12,7 @@ const getProducers = new Promise((resolve, reject) => {
   }, 1000);
 });
 
-const getActors = new Promise((resolve, reject) => {
+export const getActors = new Promise((resolve, reject) => {
   setTimeout(function () {
     resolve([
       {
@@ -52,7 +52,7 @@ const getActors = new Promise((resolve, reject) => {
   }, 1000);
 });
 
-const getDisponibilidade = new Promise((resolve, reject) => {
+export const getDisponibilidade = new Promise((resolve, reject) => {
   setTimeout(function () {
     resolve([
       {

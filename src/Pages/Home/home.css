@@ -1,0 +1,64 @@
+label, input {
+    margin: 5px 0 !important;
+}
+
+input {
+    padding: 10px;
+    text-transform: uppercase;
+    width: 70%;
+}
+
+#logo {
+    width: 90%;
+    margin: 40px 20px 20px;
+    align-self: center;
+}
+
+.home {
+    background: url(../../assets/images/claquete.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.titulo_login {
+    font-size: 5vh;
+    margin: 10px 0 15px;
+}
+
+.form_login {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    margin: 50px 20px;
+    align-self: center;
+}
+
+#botao_entrar {
+    background-color: #D44D5C;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    margin: 10px 0;
+    font-weight: bold;
+    width: 70%;
+}
+
+.link_cadastro {
+    text-decoration: none;
+    color: #D44D5C;
+    text-transform: uppercase;
+}
+
+.container_cadastro {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    margin-top: 20px;
+}
