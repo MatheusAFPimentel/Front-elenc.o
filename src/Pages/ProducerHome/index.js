@@ -25,7 +25,9 @@ const ProducerHome = (props) => {
               <label htmlFor="">Data de fim</label>
               <input type="date" />
             </div>
-            <button type="submit">Buscar</button>
+            <div className="form-submit">
+              <button type="submit">Buscar</button>
+            </div>
           </form>
         </main>
         <header>
