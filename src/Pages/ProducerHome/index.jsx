@@ -1,6 +1,21 @@
 import "./index.css";
 import { FaSearch } from "react-icons/fa";
+import { useEffect, useState } from "react";
+//fake data api
+import { getActors } from "../../assets/fakedata/api";
+
 const ProducerHome = (props) => {
+  const [search, setSearch] = useState([]);
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    getActors.then((data) => {
+      console.log(search);
+      setSearch(data);
+    });
+  }
+
+  console.log(search);
   return (
     <div className="home_producer_container">
       <div className="home_producer_sidebar">
@@ -8,7 +23,7 @@ const ProducerHome = (props) => {
           <h2>Buscar</h2>
         </header>
         <main>
-          <form action="">
+          <form onSubmit={handleSubmit} action="">
             <div className="form-group">
               <label htmlFor="">Quantos atores precisam</label>
               <select name="" id="">
@@ -56,7 +71,18 @@ const ProducerHome = (props) => {
         </main>
       </div>
       <div className="home_producer_background">
-        <h1>Você não fez nenhuma busca ainda</h1>
+        {search.length !== 0 ? (
+          search.map((actor) => (
+            <div key={actor.id}>
+              <h1>Nome: {actor.name}</h1>
+              <h1>idade: {actor.age}</h1>
+              <h1>Sexo: {actor.sex}</h1>
+              <h1>Drt: {actor.drt}</h1>
+            </div>
+          ))
+        ) : (
+          <h1>Você não fez nenhuma busca ainda</h1>
+        )}
       </div>
     </div>
   );
