@@ -1,7 +1,8 @@
 .home_producer_container {
   display: flex;
-  height: 100vh;
-  width: 100%;
+  min-height: 100vh;
+  min-width: 100%;
+  background: #e5e5e5;
 }
 
 .home_producer_background {
@@ -27,12 +28,11 @@
   line-height: 56px;
   text-align: center;
   letter-spacing: -0.015em;
-
   color: #ffffff;
 }
+
 .home_producer_sidebar {
   display: flex;
-  background: #e5e5e5;
   height: 100%;
   width: 30vw;
   flex-direction: column;
@@ -50,7 +50,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #e5e5e5;
   color: black;
   padding: 30px;
 }

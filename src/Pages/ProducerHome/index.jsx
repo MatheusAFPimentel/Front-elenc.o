@@ -3,6 +3,7 @@ import { FaSearch } from "react-icons/fa";
 import { useEffect, useState } from "react";
 //fake data api
 import { getActors } from "../../assets/fakedata/api";
+import CardAtores from "../../Components/CardsAtores/CardsAtores";
 
 const ProducerHome = (props) => {
   const [search, setSearch] = useState([]);
@@ -15,7 +16,6 @@ const ProducerHome = (props) => {
     });
   }
 
-  console.log(search);
   return (
     <div className="home_producer_container">
       <div className="home_producer_sidebar">
@@ -72,14 +72,7 @@ const ProducerHome = (props) => {
       </div>
       <div className="home_producer_background">
         {search.length !== 0 ? (
-          search.map((actor) => (
-            <div key={actor.id}>
-              <h1>Nome: {actor.name}</h1>
-              <h1>idade: {actor.age}</h1>
-              <h1>Sexo: {actor.sex}</h1>
-              <h1>Drt: {actor.drt}</h1>
-            </div>
-          ))
+          search.map((actor) => <CardAtores key={actor.id} actor={actor} />)
         ) : (
           <h1>Você não fez nenhuma busca ainda</h1>
         )}

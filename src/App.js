@@ -7,7 +7,7 @@ import "./App.css";
 export default function app() {
   return (
     <BrowserRouter>
-      <Routes></Routes>
+      <Routes />
     </BrowserRouter>
   );
 }
