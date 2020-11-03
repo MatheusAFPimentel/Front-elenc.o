@@ -20,11 +20,11 @@ function Home() {
           </button>
         </form>
         <div className="container_cadastro">
-          <a href="" className="link_cadastro">
+          <a href="/registro" className="link_cadastro">
             Cadastre-se como Produtor
           </a>
           <p>ou</p>
-          <a href="" className="link_cadastro">
+          <a href="/registro" className="link_cadastro">
             Cadastre-se como Elenco
           </a>
         </div>

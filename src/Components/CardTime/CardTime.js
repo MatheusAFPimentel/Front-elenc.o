@@ -4,7 +4,7 @@ import "./cardTime.css";
 function CardTime(props) {
   return (
     <div>
-      <Card className="card_time">
+      <Card id="card_time">
         <CardImg
           className="img_card_time"
           top
@@ -13,15 +13,15 @@ function CardTime(props) {
           alt="Foto do time"
         />
         <CardBody>
-          <CardTitle>
-            <h3>{props.membro.nome}</h3>
+          <CardTitle className="card_time_nomes">
+            <b>{props.membro.nome}</b>
           </CardTitle>
           <CardText>
-            <a>{props.membro.github}</a>
+            <a id="card_time_github" href={props.membro.github}>
+              GitHub
+            </a>
           </CardText>
-          <CardText>
-            <p>{props.membro.funcao}</p>
-          </CardText>
+          <CardText className='card_time_funcao'>{props.membro.funcao}</CardText>
         </CardBody>
       </Card>
     </div>

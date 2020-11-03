@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import logo from '../../assets/images/logo_white.png';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import './navBar.css'
+import './navbar.css'
 import {
     Collapse,
     Navbar,
@@ -8,36 +9,37 @@ import {
     NavbarBrand,
     Nav,
     NavItem,
-    NavLink,
-    NavbarText
+    NavLink
   } from 'reactstrap';
 
 function NavBar() {
-    const [isOpen, setIsOpen] = useState(false);
-    const toggle = () => setIsOpen(!isOpen);
+  const [collapsed, setCollapsed] = useState(true);
+
+  const toggleNavbar = () => setCollapsed(!collapsed);
     
     return (
         <div>
-        <Navbar className="NavBar" light expand="md">
-        <img src="../../../public/logo.svg"></img>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
-            <NavItem  >
-              <a className="NavItemPerfil" href="/components/">Perfil</a>
+        <Navbar style={{color: 'white'}} id='navbar_container' light>
+        <NavbarBrand href='/'>
+          <img id='logo' src={logo} alt='logo' />
+        </NavbarBrand>
+        <NavbarToggler onClick={toggleNavbar} />
+        <Collapse isOpen={!collapsed} navbar>
+          <Nav navbar>
+            <NavItem>
+              <NavLink href="/components/">Perfil</NavLink>
             </NavItem>
             <NavItem >
-              <a className="NavItemSobre" href="/sobre">Sobre</a>
+              <NavLink href="/sobre">Sobre</NavLink>
             </NavItem>
             <NavItem>
-              <a className="NavItemReservas" href="/reservas">Reservas</a>
+              <NavLink href="/reservas">Reservas</NavLink>
             </NavItem>
           </Nav>
-          <NavbarText></NavbarText>
         </Collapse>
       </Navbar>
       </div>
     )
 }
 
-export default NavBar
+export default NavBar;

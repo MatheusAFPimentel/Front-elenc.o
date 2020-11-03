@@ -25,7 +25,7 @@ const ProducerHome = (props) => {
         <main>
           <form onSubmit={handleSubmit} action="">
             <div className="form-group">
-              <label htmlFor="">Quantos atores precisam</label>
+              <label htmlFor="">De quantos atores você precisa?</label>
               <select name="" id="">
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -41,17 +41,17 @@ const ProducerHome = (props) => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="">Genero da obra (Separado por virgulas)</label>
+              <label htmlFor="">Genero da obra (separado por vírgulas)</label>
               <input type="text" placeholder="Drama, Ação" />
             </div>
 
             <div className="form-group">
-              <label htmlFor="">Data de inicio</label>
+              <label htmlFor="">Data de início da filmagem</label>
               <input type="date" />
             </div>
 
             <div className="form-group">
-              <label htmlFor="">Data de fim</label>
+              <label htmlFor="">Data de fim da filmagem</label>
               <input type="date" />
             </div>
 

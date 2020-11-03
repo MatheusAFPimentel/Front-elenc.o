@@ -23,7 +23,6 @@ function CardsAtores(props) {
             <h2>{props.actors.name}</h2>
           </CardTitle>
           <CardText>
-            <p>
               Idade: {props.actors.age}
               <br />
               Gênero: {props.actors.sex}
@@ -33,7 +32,6 @@ function CardsAtores(props) {
               Atuação: {props.actors.genre}
               <br />
               Cachê: {props.actors.salary}
-            </p>
           </CardText>
           <Button className="botao_card">Reservar</Button>
         </CardBody>
