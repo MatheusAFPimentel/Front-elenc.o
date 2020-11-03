@@ -19,7 +19,7 @@ function NavBar() {
     
     return (
         <div>
-        <Navbar style={{color: 'white'}} id='navbar_container' light>
+        <Navbar id='navbar_container' light>
         <NavbarBrand href='/'>
           <img id='logo' src={logo} alt='logo' />
         </NavbarBrand>
