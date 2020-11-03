@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+#form-login{
+align-items: center;
+margin-left: 50px;
+font-family: 'Roboto', sans-serif;
+}
+#btncadastro{
+    color:#fff;
+    background-color:  #d44d5c;
+    width: 130px;
+    cursor: pointer;
+
+
+}
+#btncadastro:hover{
+    background-color:  #fa2b43;
+    
+}
+
