@@ -17,11 +17,9 @@ function CardTime(props) {
             <h3>{props.membro.nome}</h3>
           </CardTitle>
           <CardText>
-            <a>{props.membro.github}</a>
+            <a href={props.membro.github}>Github</a>
           </CardText>
-          <CardText>
-            <p>{props.membro.funcao}</p>
-          </CardText>
+          <CardText>{props.membro.funcao}</CardText>
         </CardBody>
       </Card>
     </div>
