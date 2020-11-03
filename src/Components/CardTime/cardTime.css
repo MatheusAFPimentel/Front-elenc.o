@@ -1,0 +1,35 @@
+#card_time {
+    margin: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    background-color: rgba(119, 51, 68, 0.7);
+}
+
+#card_time_github {
+    color: white;
+}
+
+.card_time_nomes {
+    font-weight: 700;
+}
+
+.card_time_funcao {
+    font-style: italic;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 768px) {
+    #card_time {
+        width: 250px;
+        padding: 20px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+}
+
+@media screen and (min-width: 1920px) {
+}

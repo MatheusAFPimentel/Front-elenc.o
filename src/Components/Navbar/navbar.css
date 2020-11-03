@@ -1,60 +1,11 @@
-.NavBar {
-    height: 55px;
-    background: #370617;
-    
-}
+#logo {
+    width: 100%;
+    max-width: 150px;
+    padding: 0;
+    margin: 5px;
+  }
 
-.NavItemPerfil{
-    position: absolute;
-    left: 65.76%;
-    right: 30.49%;
-    top: 31.43%;
-    bottom: 28.57%;
-
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 28px;
-    text-align: center;
-    letter-spacing: -0.015em;
-
-    color: #FFFFFF;
-}
-
-.NavItemSobre {
-    position: absolute;
-    left: 75.9%;
-    right: 17.43%;
-    top: 31.43%;
-    bottom: 28.57%;
-
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 28px;
-    text-align: center;
-    letter-spacing: -0.015em;
-
-    color: #FFFFFF;
-}
-
-.NavItemReservas {
-    position: absolute;
-    left: 87.5%;
-    right: 5.83%;
-    top: 31.43%;
-    bottom: 28.57%;
-
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 28px;
-    text-align: center;
-    letter-spacing: -0.015em;
-
-    color: #FFFFFF;
-
+#navbar_container {
+    background-color: #773344;
+    color: #F5E9E2 !important;
 }

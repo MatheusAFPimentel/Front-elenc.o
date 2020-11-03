@@ -1,0 +1,52 @@
+.sobre_container {
+    background-image: url(../../assets/images/home_chairs.png);
+    height: fit-content;
+    padding-bottom: 50px;
+}
+
+.sobre_conteudo {
+    margin: 20px 30px;
+    line-height: 1.5;
+    align-self: center;
+}
+
+#sobre_texto {
+    color: white;
+    margin: 30px 0;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 768px) {
+    .sobre_container {
+        height: 100vh;
+        background-repeat: round;
+    }
+
+    .sobre_container_cards {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #sobre_texto {
+        max-width: 500px;
+        align-self: center;
+        font-size: 1.9vh;
+        text-align: center;
+    }
+
+    .sobre_conteudo {
+        display: flex;
+        flex-direction: column;
+        margin-top: 80px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    
+}
+
+@media screen and (min-width: 1920px) {
+}

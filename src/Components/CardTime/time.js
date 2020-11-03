@@ -1,30 +1,30 @@
 const time = [
   {
     nome: "Daniel Carvalho",
-    imagem: "./daniel.jpg",
+    imagem: require('./daniel.jpg'),
     github: "https://github.com/danielbpc2",
     funcao: "Back-end",
   },
 
   {
     nome: "Débora Nisenbaum",
-    imagem: "./debora.jpg",
+    imagem: require('./debora.jpg'),
     github: "https://github.com/deboranis",
     funcao: "CSS e responsividade",
   },
 
   {
     nome: "Matheus Pimentel",
-    imagem: "./matheus.png",
+    imagem: require('./matheus.png'),
     github: "https://github.com/MatheusAFPimentel",
-    funcao: "",
+    funcao: "React components",
   },
 
   {
     nome: "Rodrigo Moura",
-    imagem: "./rodrigo.png",
+    imagem: require('./rodrigo.png'),
     github: "https://github.com/rodrigo-dev",
-    funcao: "",
+    funcao: "React components",
   },
 ];
 
