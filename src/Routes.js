@@ -1,12 +1,12 @@
 import { Switch, Route } from "react-router-dom";
 
-import Home from "./Pages/Home/Home";
-import MeuPerfilAtor from "./Pages/MeuPerfilAtor/MeuPerfilAtor";
-import MeuPerfilProdutor from "./Pages/MeuPerfilProdutor/MeuPerfilProdutor";
-import ProducerHome from "./Pages/ProducerHome";
+import Home from "./pages/Home/Home";
+import MeuPerfilAtor from "./pages/MeuPerfilAtor/MeuPerfilAtor";
+import MeuPerfilProdutor from "./pages/MeuPerfilProdutor/MeuPerfilProdutor";
+import ProducerHome from "./pages/ProducerHome";
 import Cadastro from "./pages/Cadastro";
-import Sobre from "./Pages/Sobre/Sobre";
-import PainelResultados from "./Pages/PainelResultados/PainelResultados";
+import Sobre from "./pages/Sobre/Sobre";
+import PainelResultados from "./pages/PainelResultados/PainelResultados";
 
 const Routes = () => {
   return (
