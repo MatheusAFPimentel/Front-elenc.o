@@ -4,7 +4,7 @@ import Routes from "./Routes";
 import "../src/Reset.css";
 import "./App.css";
 
-export default function app() {
+export default function App() {
   return (
     <BrowserRouter>
       <Routes />

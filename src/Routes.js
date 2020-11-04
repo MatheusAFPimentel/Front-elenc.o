@@ -1,4 +1,4 @@
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, useLocation } from "react-router-dom";
 
 import Home from "./pages/Home/Home";
 import MeuPerfilAtor from "./pages/MeuPerfilAtor/MeuPerfilAtor";
@@ -8,18 +8,40 @@ import Cadastro from "./pages/Cadastro";
 import Sobre from "./pages/Sobre/Sobre";
 import PainelResultados from "./pages/PainelResultados/PainelResultados";
 
+import Navbar from "./Components/Navbar/Navbar";
+
 const Routes = () => {
-  return (
-    <Switch>
-      <Route path="/" exact component={Home} />
-      <Route path="/actor/profile" exact component={MeuPerfilAtor} />
-      <Route path="/producer/profile" exact component={MeuPerfilProdutor} />
-      <Route path="/results" exact component={PainelResultados} />
-      <Route path="/dashboard" exact component={ProducerHome} />
-      <Route path="/registro" exact component={Cadastro} />
-      <Route path="/sobre" exact component={Sobre} />
-    </Switch>
-  );
+  switch (useLocation().pathname) {
+    case "/":
+      return (
+        <Switch>
+          <Route path="/" exact component={Home} />
+        </Switch>
+      );
+    case "/registro":
+      return (
+        <Switch>
+          <Route path="/registro" component={Cadastro} />
+        </Switch>
+      );
+    default:
+      return (
+        <>
+          <Navbar />
+          <Switch>
+            <Route path="/actor/profile" exact component={MeuPerfilAtor} />
+            <Route
+              path="/producer/profile"
+              exact
+              component={MeuPerfilProdutor}
+            />
+            <Route path="/results" component={PainelResultados} />
+            <Route path="/dashboard" component={ProducerHome} />
+            <Route path="/sobre" component={Sobre} />
+          </Switch>
+        </>
+      );
+  }
 };
 
 export default Routes;
