@@ -1,6 +1,6 @@
 import "./index.css";
 import { FaSearch } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 //fake data api
 import { getActors } from "../../assets/fakedata/api";
 import CardAtores from "../../Components/CardsAtores/CardsAtores";
