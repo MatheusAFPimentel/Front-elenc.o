@@ -13,3 +13,30 @@
 .nav-link {
     color: white !important;
   }
+
+
+@media screen and (min-width: 768px) {
+  .navbar-toggler {
+    display: none;
+  }
+
+  #navbar-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .navbar {
+    flex-wrap: nowrap;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .nav-item {
+    justify-content: space-between;
+    margin: 0 15px;
+  }
+
+  
+}

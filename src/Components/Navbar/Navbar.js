@@ -13,8 +13,8 @@ import {
   } from 'reactstrap';
 
 function NavBar() {
+  
   const [collapsed, setCollapsed] = useState(true);
-
   const toggleNavbar = () => setCollapsed(!collapsed);
     
     return (
@@ -23,7 +23,7 @@ function NavBar() {
         <NavbarBrand href='/'>
           <img id='logo' src={logo} alt='logo' />
         </NavbarBrand>
-        <NavbarToggler onClick={toggleNavbar} />
+        <NavbarToggler id='hamburger' onClick={toggleNavbar} />
         <Collapse isOpen={!collapsed} navbar>
           <Nav navbar>
             <NavItem>

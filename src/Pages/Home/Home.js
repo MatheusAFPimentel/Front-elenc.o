@@ -5,7 +5,7 @@ import logo from "../../assets/images/logo.svg";
 function Home() {
   return (
     <div className="home">
-      <img id="logo" src={logo} alt="logo elenc.o" />
+      <img id="home_logo" src={logo} alt="logo elenc.o" />
       <div className="form_login">
         <form>
           <h2 className="titulo_login">Login</h2>
