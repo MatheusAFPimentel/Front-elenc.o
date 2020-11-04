@@ -1,12 +1,12 @@
 import React from 'react';
 import './index.css';
-//import BackgroundImageCadastro from '../../assets/images/backgroundImageCadastro.jpg'
+import BackgroundImageCadastro from '../../assets/images/backgroundImageCadastro.jpg'
 
 export default function Cadastro() {
     return (
         <>
             <div className="tela-cadastro">
-                {/* <img className="backcadastro" src={BackgroundImageCadastro} alt="" /> */}
+                <img className="backcadastro" src={BackgroundImageCadastro} alt="" />
                 <from className="form-login">
                     <ul>
                     <label id="labelName">Nome:</label>
