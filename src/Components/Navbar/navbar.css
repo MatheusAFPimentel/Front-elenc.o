@@ -6,7 +6,6 @@
 }
 
 #navbar_container {
-<<<<<<< HEAD
   background-color: #773344;
   color: #f5e9e2 !important;
 }
@@ -14,12 +13,3 @@
 .nav-link {
   color: white !important;
 }
-=======
-    background-color: #773344;
-    color: #F5E9E2 !important;
-}
-
-.nav-link {
-    color: white !important;
-  }
->>>>>>> e96c7018151e2610f7a7d22c34d94b2d5d42751c
