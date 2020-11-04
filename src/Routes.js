@@ -4,7 +4,7 @@ import Home from "./pages/Home/Home";
 import MeuPerfilAtor from "./pages/MeuPerfilAtor/MeuPerfilAtor";
 import MeuPerfilProdutor from "./pages/MeuPerfilProdutor/MeuPerfilProdutor";
 import ProducerHome from "./pages/ProducerHome";
-import Cadastro from "./pages/Cadastro";
+import Cadastro from "./pages/cadastro";
 import Sobre from "./pages/Sobre/Sobre";
 import PainelResultados from "./pages/PainelResultados/PainelResultados";
 
