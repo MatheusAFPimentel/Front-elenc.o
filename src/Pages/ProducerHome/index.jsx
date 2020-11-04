@@ -11,7 +11,6 @@ const ProducerHome = (props) => {
   function handleSubmit(event) {
     event.preventDefault();
     getActors.then((data) => {
-      console.log(search);
       setSearch(data);
     });
   }
