@@ -1,5 +1,5 @@
 import "./index.css";
-import { FaSearch } from "react-icons/fa";
+import { FaSearch, FaArrowUp, FaArrowDown } from "react-icons/fa";
 import { useState } from "react";
 //fake data api
 import { getActors } from "../../assets/fakedata/api";
@@ -7,12 +7,55 @@ import CardAtores from "../../Components/CardsAtores/CardsAtores";
 
 const ProducerHome = (props) => {
   const [search, setSearch] = useState([]);
+  const [priceFilter, setPriceFilter] = useState(false);
+  const [relevanceFilter, setRelevanceFilter] = useState(false);
+  const [genre, setGenre] = useState([]);
 
   function handleSubmit(event) {
     event.preventDefault();
     getActors.then((data) => {
       setSearch(data);
     });
+  }
+
+  function toogleRelevance(event) {
+    let sortedSearch;
+    if (relevanceFilter) {
+      sortedSearch = search.sort((x, y) => {
+        if (x.genre.includes(...genre)) {
+          return -1;
+        } else {
+          return 1;
+        }
+      });
+    } else {
+      sortedSearch = search.sort((x, y) => {
+        if (x.genre.includes(...genre)) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+    }
+    setRelevanceFilter(!relevanceFilter);
+    setSearch(sortedSearch);
+  }
+
+  function tooglePrice() {
+    let sortedSearch;
+    if (priceFilter) {
+      sortedSearch = search.sort((x, y) => y.salary - x.salary);
+    } else {
+      sortedSearch = search.sort((x, y) => x.salary - y.salary);
+    }
+    setPriceFilter(!priceFilter);
+    setSearch(sortedSearch);
+  }
+
+  function handleGenreChange(e) {
+    const genreArray = e.target.value.split(",");
+    const trimmedArray = genreArray.map((genre) => genre.trim());
+    setGenre(trimmedArray);
   }
 
   return (
@@ -41,7 +84,11 @@ const ProducerHome = (props) => {
 
             <div className="form-group">
               <label htmlFor="">Genero da obra (separado por vírgulas)</label>
-              <input type="text" placeholder="Drama, Ação" />
+              <input
+                type="text"
+                placeholder="Drama, Ação"
+                onChange={handleGenreChange}
+              />
             </div>
 
             <div className="form-group">
@@ -61,6 +108,19 @@ const ProducerHome = (props) => {
               </button>
             </div>
           </form>
+        </main>
+        <header>
+          <h2>Filtrar</h2>
+        </header>
+        <main>
+          <ul>
+            <li onClick={toogleRelevance}>
+              Relevância {relevanceFilter ? <FaArrowUp /> : <FaArrowDown />}
+            </li>
+            <li onClick={tooglePrice}>
+              Preço {priceFilter ? <FaArrowUp /> : <FaArrowDown />}
+            </li>
+          </ul>
         </main>
         <header>
           <h2>Reservas</h2>
