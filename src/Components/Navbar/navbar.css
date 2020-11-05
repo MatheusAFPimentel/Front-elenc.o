@@ -1,13 +1,13 @@
 #logo {
-    width: 100%;
-    max-width: 150px;
-    padding: 0;
-    margin: 5px;
-  }
+  width: 100%;
+  max-width: 150px;
+  padding: 0;
+  margin: 5px;
+}
 
 #navbar_container {
-    background-color: #773344;
-    color: #F5E9E2 !important;
+  background-color: #773344;
+  color: #f5e9e2 !important;
 }
 
 .nav-link {
@@ -51,3 +51,4 @@
     margin: 0 15px;
   }
 }
+

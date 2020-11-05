@@ -9,34 +9,32 @@ import {
   Button,
 } from "reactstrap";
 
-function CardsAtores(props) {
+function CardsAtores({ actor }) {
   return (
-    <div>
-      <Card className="card">
-        <CardImg
-          className="img_card"
-          src={props.actors.avatar}
-          alt="foto do actors"
-        ></CardImg>
-        <CardBody>
-          <CardTitle>
-            <h2>{props.actors.name}</h2>
-          </CardTitle>
-          <CardText>
-              Idade: {props.actors.age}
-              <br />
-              Gênero: {props.actors.sex}
-              <br />
-              DRT: {props.actors.drt}
-              <br />
-              Atuação: {props.actors.genre}
-              <br />
-              Cachê: {props.actors.salary}
-          </CardText>
-          <Button className="botao_card">Reservar</Button>
-        </CardBody>
-      </Card>
-    </div>
+    <Card className="card">
+      <CardImg
+        className="img_card"
+        src={actor.avatar}
+        alt="foto do actors"
+      ></CardImg>
+      <CardBody>
+        <CardTitle>
+          <h2>{actor.name}</h2>
+        </CardTitle>
+        <CardText>
+          Idade: {actor.age}
+          <br />
+          Gênero: {actor.sex}
+          <br />
+          DRT: {actor.drt}
+          <br />
+          Atuação: {actor.genre.join(", ")}
+          <br />
+          Cachê: R${actor.salary.toLocaleString()}
+        </CardText>
+        <Button className="botao_card">Reservar</Button>
+      </CardBody>
+    </Card>
   );
 }
 
