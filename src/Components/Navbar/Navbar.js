@@ -1,35 +1,34 @@
-import React, { useState } from 'react';
-import logo from '../../assets/images/logo_white.png';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import './navbar.css'
+import React, { useState } from "react";
+import logo from "../../assets/images/logo_white.png";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./navbar.css";
 import {
-    Collapse,
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink
-  } from 'reactstrap';
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+} from "reactstrap";
 
 function NavBar() {
-  
   const [collapsed, setCollapsed] = useState(true);
   const toggleNavbar = () => setCollapsed(!collapsed);
-    
-    return (
-        <div>
-        <Navbar id='navbar_container' light>
-        <NavbarBrand href='/'>
-          <img id='logo' src={logo} alt='logo' />
+
+  return (
+    <div>
+      <Navbar id="navbar_container" light>
+        <NavbarBrand href="/">
+          <img id="logo" src={logo} alt="logo" />
         </NavbarBrand>
-        <NavbarToggler id='hamburger' onClick={toggleNavbar} />
+        <NavbarToggler id="hamburger" onClick={toggleNavbar} />
         <Collapse isOpen={!collapsed} navbar>
           <Nav navbar>
             <NavItem>
               <NavLink href="/components/">Perfil</NavLink>
             </NavItem>
-            <NavItem >
+            <NavItem>
               <NavLink href="/sobre">Sobre</NavLink>
             </NavItem>
             <NavItem>
@@ -37,9 +36,20 @@ function NavBar() {
             </NavItem>
           </Nav>
         </Collapse>
+        <div className="navfake">
+          <NavItem>
+            <NavLink href="/components/">Perfil</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="/sobre">Sobre</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="/reservas">Reservas</NavLink>
+          </NavItem>
+        </div>
       </Navbar>
-      </div>
-    )
+    </div>
+  );
 }
 
 export default NavBar;

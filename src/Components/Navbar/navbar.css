@@ -14,10 +14,23 @@
     color: white !important;
   }
 
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.navfake {
+  display: none;
+}
+
 
 @media screen and (min-width: 768px) {
   .navbar-toggler {
     display: none;
+  }
+
+  .navfake {
+    display: flex;
+    flex-direction: row;
   }
 
   #navbar-container {
@@ -37,6 +50,4 @@
     justify-content: space-between;
     margin: 0 15px;
   }
-
-  
 }
