@@ -6,7 +6,7 @@ function CardTime(props) {
     <div>
       <Card id="card_time">
         <CardImg
-          className="img_card_time"
+          className="card_time_img"
           top
           width="100%"
           src={props.membro.imagem}
