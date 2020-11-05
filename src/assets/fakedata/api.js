@@ -39,7 +39,7 @@ export const getActors = new Promise((resolve, _reject) => {
         email: "debora@ator.com",
         password: "123123",
         sex: "Feminino",
-        salary: 69.99,
+        salary: 500.0,
         genre: ["Drama", "Comédia"],
         avatar:
           "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
@@ -52,7 +52,7 @@ export const getActors = new Promise((resolve, _reject) => {
         password: "123123",
         age: 26,
         sex: "Masculino",
-        salary: 69.99,
+        salary: 300.0,
         genre: ["Ação", "Aventura"],
         avatar:
           "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
