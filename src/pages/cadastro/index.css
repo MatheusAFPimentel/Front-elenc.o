@@ -1,7 +1,15 @@
-#form-login {
-  align-items: center;
-  margin-left: 50px;
-  font-family: "Roboto", sans-serif;
+.form-login {
+  width: 40%;
+  height: 200px;
+  text-align: center;
+  font-size: 15px;
+  color: #fff;
+  position: absolute;
+  top: 10em;
+  left: 20em;
+  right: 0;
+  bottom: 0;
+
 }
 #btncadastro {
   color: #fff;
@@ -11,4 +19,8 @@
 }
 #btncadastro:hover {
   background-color: #fa2b43;
+}
+.backcadastro{
+  position: relative;
+
 }

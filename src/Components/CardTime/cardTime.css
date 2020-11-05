@@ -11,12 +11,22 @@
     color: white;
 }
 
+#card_time_github:hover {
+    text-decoration: white;
+}
+
 .card_time_nomes {
     font-weight: 700;
 }
 
 .card_time_funcao {
     font-style: italic;
+}
+
+.card_time_img {
+    max-width: 150px;
+    align-self: center;
+    margin-top: 20px;
 }
 
 /* MEDIA QUERIES */
@@ -32,4 +42,12 @@
 }
 
 @media screen and (min-width: 1920px) {
+    #card_time {
+        font-size: 2vh;
+        min-width: 350px;
+    }
+
+    .card_time_img {
+        min-width: 180px;
+    }
 }

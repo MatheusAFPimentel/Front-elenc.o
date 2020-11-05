@@ -12,7 +12,7 @@ input {
 
 /* IDS */
 
-#logo {
+#home_logo {
     width: 90%;
     margin: 40px 20px 10px;
     align-self: center;
@@ -95,7 +95,7 @@ input {
         font-size: 2vh;
     }
     
-    #logo {
+    #home_logo {
         max-width: 70%;
     }
 
@@ -112,7 +112,7 @@ input {
         background-size: cover;
     }
 
-    #logo {
+    #home_logo {
         max-width: 30%;
         align-self: flex-start;
         padding: 0;
@@ -132,7 +132,7 @@ input {
         padding: 40px 30px;
     }
 
-    #logo {
+    #home_logo {
         margin-left: 55px;
     }
 
