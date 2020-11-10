@@ -33,16 +33,17 @@ function Home() {
           <h3>
             <span style={{ color: "red" }}>{loginErr}</span>
           </h3>
-          <label>Email</label> <br />
+          <label id="label_home">Email</label> <br />
           <input
             type="email"
             placeholder="insira seu email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            id="input_home"
           />
           <br />
-          <label>Senha</label>
+          <label id="label_home">Senha</label>
           <br />
           <input
             type="password"
@@ -50,6 +51,7 @@ function Home() {
             onChange={(e) => setPassword(e.target.value)}
             value={password}
             required
+            id="input_home"
           />
           <br />
           <button id="botao_entrar" type="submit">
