@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import CardAtores from '../../Components/CardsAtores/CardsAtores'
-import { getActors } from '../../assets/fakedata/api'
+import { getActors } from '../../assets/fakedata/api';
 import { Card, CardBody, CardImg, CardText, CardTitle } from "reactstrap";
 
 
