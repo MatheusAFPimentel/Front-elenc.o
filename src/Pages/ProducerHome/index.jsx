@@ -96,11 +96,6 @@ const ProducerHome = (props) => {
             <input id="input_producer" type="date" />
           </div>
 
-          <div className="form-group">
-            <label htmlFor="">Data de fim da filmagem</label>
-            <input id="input_producer" type="date" />
-          </div>
-
           <div className="form-submit">
             <button id="btn_producer-submit" type="submit">
               Buscar
@@ -113,21 +108,29 @@ const ProducerHome = (props) => {
       <div className="producer-filter_container">
         <div className="producer-filter_text">
           <h2 className="producer_titulo">Filtrar</h2>
-          <p onClick={toogleRelevance}>
-            Por relevância {relevanceFilter ? <FaArrowUp /> : <FaArrowDown />}
-          </p>
-          <p onClick={tooglePrice}>
-            Por preço {priceFilter ? <FaArrowUp /> : <FaArrowDown />}
-          </p>
+          <div className="producer-filter_category">
+            <p onClick={toogleRelevance}>
+              Por relevância {relevanceFilter ? <FaArrowUp /> : <FaArrowDown />}
+            </p>
+            <p onClick={tooglePrice}>
+              Por preço {priceFilter ? <FaArrowUp /> : <FaArrowDown />}
+            </p>
+          </div>
         </div>
 
-        <div className="producer_results">
-          {search.length !== 0 ? (
-            search.map((actor) => <CardAtores key={actor.id} actor={actor} />)
-          ) : (
+        {search.length !== 0 ? (
+          <div className="producer_results">
+            <div className="card_list">
+              {search.map((actor) => (
+                <CardAtores key={actor.id} actor={actor} />
+              ))}
+            </div>
+          </div>
+        ) : (
+          <div className="producer_results_empty">
             <h1>Você não fez nenhuma busca ainda</h1>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </div>
   );
