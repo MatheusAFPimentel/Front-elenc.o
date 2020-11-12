@@ -18,5 +18,12 @@
 * Typescript
 * Prettier
 
-#### :raising_hand: Nosso time é composto por [Débora Nisenbaum](https://github.com/deboranis), [Daniel Carvalho](https://github.com/danielbpc2), [Matheus Pimentel](https://github.com/MatheusAFPimentel) e [Rodrigo Moura](https://github.com/rodrigo-dev).
+#### :mega: Para realizar nosso fluxo de trabalho, utilizamos Scrum, Figma para prototipação e Trello para organização. Nosso time se estabeleceu da seguinte maneira:
+* Débora - Scrum Master/Dev Team
+* Rodrigo - Product Owner/Dev Team
+* Daniel e Matheus - Dev Team
+
+Assim, conseguimos elaborar sprints para montar os componentes como uma linha de produção: prototipação, desenvolvimento da lógica, embelezamento e por fim responsividade. Isso facilitou a revisão final do código e a divisão de tarefas.
+
+#### :raising_hand: Conheça nosso time de devs! [Débora Nisenbaum](https://github.com/deboranis), [Daniel Carvalho](https://github.com/danielbpc2), [Matheus Pimentel](https://github.com/MatheusAFPimentel) e [Rodrigo Moura](https://github.com/rodrigo-dev).
 
