@@ -21,7 +21,7 @@ const Routes = () => {
     case "/registro":
       return (
         <Switch>
-          <Route path="/registro" component={Cadastro} />
+          <Route path="/cadastro" component={Cadastro} />
         </Switch>
       );
     default:
@@ -35,8 +35,8 @@ const Routes = () => {
               exact
               component={MeuPerfilProdutor}
             />
-            <Route path="/results" component={PainelResultados} />
-            <Route path="/dashboard" component={ProducerHome} />
+            <Route path="/resultados" component={PainelResultados} />
+            <Route path="/busca" component={ProducerHome} />
             <Route path="/sobre" component={Sobre} />
           </Switch>
         </>
