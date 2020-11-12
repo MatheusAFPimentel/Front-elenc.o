@@ -1,106 +1,162 @@
-.home_producer_container {
-  display: flex;
-  min-height: 100vh;
-  min-width: 100%;
-  background: #e5e5e5;
+/* IDS */
+
+#input_producer, #select_producer {
+  text-transform: uppercase;
+  padding: 10px;
+  border: none;
+  margin: 10px 0;
+  font-weight: 300;
 }
 
-.home_producer_background {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.72) 63.16%,
-      rgba(0, 0, 0, 0) 100%
-    ),
-    url("../../assets/images/home_chairs.png");
-  mix-blend-mode: normal;
+#select_producer {
+  margin: 0 3px;
 }
 
-.home_producer_background h1 {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: normal;
-  font-size: 48px;
-  line-height: 56px;
-  text-align: center;
-  letter-spacing: -0.015em;
-  color: #ffffff;
+#label_gender-producer {
+  margin-top: 10px;
 }
 
-.home_producer_sidebar {
-  display: flex;
-  height: 100%;
-  width: 30vw;
-  flex-direction: column;
-}
-
-.home_producer_sidebar header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #773344;
+#btn_producer-submit{
+  background-color: #D44D5C;
   color: white;
+  border: none;
+  width: 70%;
+  height: fit-content;
+  padding: 15px 30px;
+  margin: 20px 0;
+  font-size: 3vh;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  transition: 0.2s ease-in-out;
+  align-self: center;
 }
 
-.home_producer_sidebar main {
+#btn_producer-submit:hover {
+  box-shadow: 5px 5px #D44D5C;
+  color: #D44D5C;
+  background-color: #ffffff;
+}
+
+#search_icon {
+  padding: 0 5px;
+  font-size: 5vh;
+  text-align: center;
+}
+
+/* CLASSES */
+
+.producer_titulo {
+  font-size: 4vh;
+  font-weight: 500;
+  margin: 20px 0;
+}
+
+.form-group_select {
+  display: inline;
+  margin: 30px 0;
+}
+
+.form-group {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  color: black;
-  padding: 30px;
-}
-
-.home_producer_sidebar .form-group {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.home_producer_sidebar label {
-  flex: 1;
-}
-
-.home_producer_sidebar input {
-  height: 2rem;
-  font-size: 16px;
-  padding: 0.5rem;
-  background: #ffffff;
-  border: 0.5px solid #9c9c9c;
-  box-sizing: border-box;
-  box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.25);
-  border-radius: 1px;
-}
-
-.home_producer_sidebar select {
-  height: 2.5rem;
-  font-size: 16px;
-  padding: 0.5rem;
-  background: #ffffff;
-  border: 0.5px solid #9c9c9c;
-  box-sizing: border-box;
-  box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.25);
-  border-radius: 1px;
+  flex-direction: column;
+  text-align: left;
 }
 
 .form-submit {
   text-align: center;
 }
 
-.form-submit button {
-  width: 206px;
-  height: 41px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 28px;
-  line-height: 33px;
-  text-align: center;
+.producer-filter_container {
+  line-height: 1.5;
+}
+
+.producer_results {
+  background-color: rgba(119, 51, 68, 1);
   color: #ffffff;
-  background: #d44d5c;
-  border-radius: 2px;
-  border: none;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.home_producer_container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 100%;
+  background: #f5e9e2;
+  padding: 30px;
+  color: #0b0014;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 768px) {
+  .producer_searchbar, .producer-filter_container {
+    margin: 40px 60px;
+  }
+
+  #select_producer {
+    margin-left: 10px;
+  }
+
+  #btn_producer-submit {
+    font-size: 2vh;
+  }
+
+  #search_icon {
+    font-size: 3vh;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .home_producer_container {
+    flex-direction: row;
+    padding: 0 30px;
+  }
+
+  .producer_searchbar {
+    margin: 0;
+    padding: 30px 30px 0 0;
+    flex: 1;
+  }
+
+  .producer_titulo {
+    margin: 0 0 20px;
+    padding: 0;
+  }
+
+  .producer-filter_container {
+    padding: 20px;
+    margin: 0;
+    flex: 2;
+    background-color: #e3b5a4;
+    height: 100vh;
+  }
+
+  .producer-filter_text {
+    text-align: left;
+    position: relative;
+  }
+
+  .producer-filter_p {
+    position: absolute;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .home_producer_container {
+    padding: 0 40px;
+    font-size: 1.8vh;
+  }
+
+  .producer_searchbar {
+    flex: 1;
+    padding: 50px 30px 0 0;
+  }
+
+  .producer-filter_container {
+    flex: 3;
+    padding: 40px;
+  }
 }
