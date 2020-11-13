@@ -18,7 +18,6 @@ const ProducerHome = (props) => {
       setSearch(data);
     });
     api.get("/actress/list").then((data) => console.log(data.data));
-    api.get("/producer/list").then((data) => console.log(data.data));
   }
 
   function toogleRelevance(event) {

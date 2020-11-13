@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./home.css";
 import logo from "../../assets/images/logo.svg";
 import { getLogin } from "../../assets/fakedata/api";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import api from "../../services/api";
 
 function Home() {
@@ -61,13 +61,13 @@ function Home() {
           </button>
         </form>
         <div className="container_cadastro">
-          <a href="/cadastro" className="link_cadastro">
+          <Link to="/cadastro?role=producer" className="link_cadastro">
             Cadastre-se como Produtor
-          </a>
+          </Link>
           <p>ou</p>
-          <a href="/cadastro" className="link_cadastro">
+          <Link to="/cadastro?role=actor" className="link_cadastro">
             Cadastre-se como Elenco
-          </a>
+          </Link>
         </div>
       </div>
     </div>
