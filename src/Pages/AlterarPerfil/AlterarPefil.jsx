@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { useLocation, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import api from "../../services/api";
-import "./alterarPerfil.css"
+import "./alterarPerfil.css";
 
 export default function Cadastro() {
-  const location = useLocation();
   const [role, setRole] = useState();
   const [form, setForm] = useState({
+    id: 0,
     name: "",
     user: { login: "", password: "" },
     company: "",
@@ -16,16 +16,18 @@ export default function Cadastro() {
     genre: "",
     avatar: "",
     phone: "",
+    status: false,
+    role: "",
+    relevance: 0,
   });
 
   const history = useHistory();
 
- 
-
   useEffect(() => {
-    const search = new URLSearchParams(location.search);
-    setRole(search.get("role"));
-  }, [location]);
+    const user = JSON.parse(localStorage.getItem("currentUser"));
+    setRole(user.role);
+    setForm({ ...form, ...user });
+  }, []);
 
   function handleChange(ev) {
     if (ev.target.name === "login" || ev.target.name === "password") {
@@ -38,8 +40,9 @@ export default function Cadastro() {
     }
   }
 
-  function handleSubmit(ev, id) {
+  function handleSubmit(ev) {
     ev.preventDefault();
+    const id = JSON.parse(localStorage.getItem("currentUser")).id;
     if (role === "producer") {
       api
         .put(`/producer/update/${id}`, {
