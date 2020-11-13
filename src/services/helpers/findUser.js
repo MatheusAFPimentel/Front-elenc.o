@@ -1,4 +1,6 @@
-export function findUser(email, password) {
+import api from "../api";
+
+export async function findUser(email, password) {
   if (!JSON.parse(localStorage.getItem("producers"))) {
     localStorage.setItem("producers", JSON.stringify([]));
   }
@@ -6,18 +8,18 @@ export function findUser(email, password) {
     localStorage.setItem("actors", JSON.stringify([]));
   }
   const savedProducers = JSON.parse(localStorage.getItem("producers"));
-  const savedActors = JSON.parse(localStorage.getItem("actors"));
+  // const savedActors = JSON.parse(localStorage.getItem("actors"));
+  const apiActors = await (await api.get("/actress/list")).data;
 
   const foundProducer = savedProducers?.find(
     (producer) =>
       producer.user.login.toLowerCase() === email.toLowerCase() &&
       producer.user.password === password
   );
-  const foundActor = savedActors?.find(
-    (actor) =>
-      actor.user.login.toLowerCase() === email.toLowerCase() &&
-      actor.user.password === password
+  const foundActor = apiActors?.find(
+    (actor) => actor.user.login.toLowerCase() === email.toLowerCase()
   );
+
   if (!!foundProducer || !!foundActor) {
     if (!!foundProducer) {
       return { user: foundProducer, role: "producer", success: true };
