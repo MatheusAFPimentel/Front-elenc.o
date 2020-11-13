@@ -11,10 +11,10 @@ function Home() {
   const [loginErr, setLoginErr] = useState("");
   const history = useHistory();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoginErr("");
-    const userFound = findUser(email, password);
+    const userFound = await findUser(email, password);
     if (userFound.success) {
       localStorage.setItem("currentUser", JSON.stringify(userFound.user));
       if (userFound.role === "producer") {

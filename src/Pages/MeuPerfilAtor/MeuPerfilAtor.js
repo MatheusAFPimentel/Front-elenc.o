@@ -43,8 +43,10 @@ const MeuPerfilAtor = (props) => {
         {reserves.length === 0 ? (
           <CardText>Você não possui reservas</CardText>
         ) : (
-          reserves.map((reserve) => (
-            <CardText>Data Reservada: {reserve.reserveDate}</CardText>
+          reserves.map((reserve, index) => (
+            <CardText key={index}>
+              Data Reservada: {reserve.reserveDate}
+            </CardText>
           ))
         )}
       </Card>
