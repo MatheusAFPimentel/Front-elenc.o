@@ -10,9 +10,10 @@
   color: #f5e9e2 !important;
 }
 
-.nav-link {
+.nav-link, .nav-item {
   color: white !important;
   text-decoration: none;
+  padding: 5px;
 }
 
 .nav-link:hover {
@@ -52,4 +53,10 @@
     color: white !important;
     text-decoration: none;
   }
+}
+
+@media screen and (min-width: 1280px) {
+    #navbar_container {
+      font-size: 2vh;
+    }
 }

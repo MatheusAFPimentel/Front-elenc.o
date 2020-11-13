@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Card, CardBody, CardImg, CardText, CardTitle } from "reactstrap";
 import api from "../../services/api";
+import './meuPerfilAtor.css';
+// import kitten from 'https://placekitten.com/200/300';
 
 const MeuPerfilAtor = (props) => {
   const [actor, setActor] = useState({});
@@ -18,13 +20,14 @@ const MeuPerfilAtor = (props) => {
   }, []);
 
   return (
-    <div>
-      <Card key={actor.id} actor={actor}>
+    <div className="perfil_ator_container">
+      <Card id="card_ator" key={actor.id} actor={actor}>
         <CardImg
-          className="img_card"
-          src={actor.avatar}
-          alt="foto do actors"
+          className="img_card_ator"
+          src="https://placekitten.com/200/300"
+          alt="foto do ator"
         ></CardImg>
+        <div className="card_expand">
         <CardTitle>
           <h2>{actor.name}</h2>
         </CardTitle>
@@ -34,21 +37,21 @@ const MeuPerfilAtor = (props) => {
           Atuação: {actor.genre}
           <br />
         </CardText>
-        <br />
-        <CardBody>
+        <CardBody id="card_body">
           <hr />
-          Suas reservas
-          <hr />
-        </CardBody>
         {reserves.length === 0 ? (
           <CardText>Você não possui reservas</CardText>
         ) : (
           reserves.map((reserve, index) => (
             <CardText key={index}>
-              Data Reservada: {reserve.reserveDate}
+              Datas reservadas: {reserve.reserveDate}
             </CardText>
           ))
         )}
+            <hr />
+            <a id="editar_perfil_ator" href="/">Editar perfil</a>
+        </CardBody>
+        </div>
       </Card>
     </div>
   );
