@@ -22,7 +22,7 @@ function NavBar() {
           className="nav-item"
           to={
             JSON.parse(localStorage.getItem("currentUser")).role === "producer"
-              ? "/producer/profile"
+              ? "/busca"
               : "/actor/profile"
           }
         >

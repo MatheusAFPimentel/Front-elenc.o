@@ -11,6 +11,8 @@ const ProducerHome = (props) => {
   const [priceFilter, setPriceFilter] = useState(false);
   const [relevanceFilter, setRelevanceFilter] = useState(false);
   const [genre, setGenre] = useState([]);
+  const [date, setDate] = useState("");
+
   useEffect(() => {
     api.get("/producer/58").then((res) => {
       console.log(res.data);
@@ -71,6 +73,26 @@ const ProducerHome = (props) => {
     setGenre(trimmedArray);
   }
 
+  function handleReserve(e, id) {
+    api
+      .post(`/reserve/save/${id}`, {
+        reserveDate: date,
+        producer: {
+          id: JSON.parse(localStorage.getItem("currentUser")).id,
+        },
+      })
+      .then((res) => {
+        alert("Reservado!");
+        e.target.disabled = true;
+      })
+      .catch((err) => {
+        alert(err);
+      });
+  }
+  function handleDateSelect(e) {
+    setDate(e.target.value);
+  }
+
   return (
     <div className="home_producer_container">
       <div className="producer_searchbar">
@@ -106,7 +128,13 @@ const ProducerHome = (props) => {
 
           <div className="form-group">
             <label htmlFor="">Data de início da filmagem</label>
-            <input id="input_producer" type="date" />
+            <input
+              id="input_producer"
+              value={date}
+              type="date"
+              required
+              onChange={handleDateSelect}
+            />
           </div>
 
           <div className="form-submit">
@@ -135,7 +163,11 @@ const ProducerHome = (props) => {
           <div className="producer_results">
             <div className="card_list">
               {search.map((actor) => (
-                <CardAtores key={actor.id} actor={actor} />
+                <CardAtores
+                  key={actor.id}
+                  actor={actor}
+                  handleReserve={handleReserve}
+                />
               ))}
             </div>
           </div>

@@ -4,6 +4,7 @@ import api from "../../services/api";
 const MeuPerfilProdutor = (props) => {
   const [user, setUser] = useState({});
   const [reserves, setReserves] = useState({});
+
   useEffect(() => {
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
     setUser({ ...currentUser });

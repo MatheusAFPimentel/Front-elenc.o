@@ -9,7 +9,7 @@ import {
   Button,
 } from "reactstrap";
 
-function CardsAtores({ actor }) {
+function CardsAtores({ actor, handleReserve }) {
   return (
     <Card className="card">
       <CardImg
@@ -32,7 +32,12 @@ function CardsAtores({ actor }) {
           <br />
           Cachê: R${actor.salary.toLocaleString()}
         </CardText>
-        <Button className="botao_card">Reservar</Button>
+        <Button
+          onClick={(event) => handleReserve(event, actor.id)}
+          className="botao_card"
+        >
+          Reservar
+        </Button>
       </CardBody>
     </Card>
   );
