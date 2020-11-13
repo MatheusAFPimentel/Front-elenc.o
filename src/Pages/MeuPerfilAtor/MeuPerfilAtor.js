@@ -5,15 +5,18 @@ import { Card, CardBody, CardImg, CardText, CardTitle } from "reactstrap";
 
 const MeuPerfilAtor = (props) => {
 
-  const [actors, setActors] = useState([])
+  const [currentUser, setCurrentUser] = useState([])
 
-  getActors.then((data) => {
-    setActors(data);
+
+    getActors.then((data) => {
+    setCurrentUser(data);
+    const user = localStorage.getItem('currentUser')
+    console.log(user)
   });
 
   return (
     <div>
-      {actors.map((actor) => <Card key={actor.id} actor={actor} >
+      {currentUser.map((actor) => <Card key={actor.id} actor={actor} >
         <CardImg
           className="img_card"
           src={actor.avatar}
