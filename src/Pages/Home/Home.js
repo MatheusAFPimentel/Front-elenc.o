@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./home.css";
 import logo from "../../assets/images/logo.svg";
-import { getLogin } from "../../assets/fakedata/api";
-import { useHistory } from "react-router-dom";
-import api from "../../services/api";
+import { useHistory, Link } from "react-router-dom";
+import { findUser } from "../../services/helpers/findUser";
+// import { getLogin } from "../../assets/fakedata/api";
 
 function Home() {
   const [email, setEmail] = useState("");
@@ -13,17 +13,29 @@ function Home() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // const savedUsers = localStorage.getItem('users');
     setLoginErr("");
-    getLogin(email, password)
-      .then((data) => {
-        if (data.role === "producer") {
-          history.push("/busca");
-        } else {
-          history.push("/actor/profile");
-        }
-      })
-      .catch((err) => setLoginErr(err));
+    const userFound = findUser(email, password);
+    if (userFound.success) {
+      localStorage.setItem("currentUser", JSON.stringify(userFound.user));
+      if (userFound.role === "producer") {
+        history.push("/busca");
+      } else {
+        history.push("/actor/profile");
+      }
+    } else {
+      setLoginErr(userFound.err);
+    }
+
+    // ? Com fake API:
+    // getLogin(email, password)
+    //   .then((data) => {
+    //     if (data.role === "producer") {
+    //       history.push("/busca");
+    //     } else {
+    //       history.push("/actor/profile");
+    //     }
+    //   })
+    //   .catch((err) => setLoginErr(err));
   };
 
   return (
@@ -61,13 +73,13 @@ function Home() {
           </button>
         </form>
         <div className="container_cadastro">
-          <a href="/cadastro" className="link_cadastro">
+          <Link to="/cadastro?role=producer" className="link_cadastro">
             Cadastre-se como Produtor
-          </a>
+          </Link>
           <p>ou</p>
-          <a href="/cadastro" className="link_cadastro">
+          <Link to="/cadastro?role=actor" className="link_cadastro">
             Cadastre-se como Elenco
-          </a>
+          </Link>
         </div>
       </div>
     </div>

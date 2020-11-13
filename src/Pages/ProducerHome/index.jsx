@@ -16,6 +16,15 @@ const ProducerHome = (props) => {
     getActors.then((data) => {
       setSearch(data);
     });
+    const savedActors = JSON.parse(localStorage.getItem("actors")).map(
+      (actor) => actor.id
+    );
+    console.log(savedActors);
+    api
+      .get("/actress/list")
+      .then((data) =>
+        console.log(data.data.filter((actor) => savedActors.includes(actor.id)))
+      );
   }
 
   function toogleRelevance(event) {
