@@ -16,10 +16,21 @@ function Home() {
     setLoginErr("");
     const userFound = await findUser(email, password);
     if (userFound.success) {
-      localStorage.setItem("currentUser", JSON.stringify(userFound.user));
       if (userFound.role === "producer") {
+        localStorage.setItem(
+          "currentUser",
+          JSON.stringify({
+            id: userFound.id,
+            role: "producer",
+            ...userFound.user,
+          })
+        );
         history.push("/busca");
       } else {
+        localStorage.setItem(
+          "currentUser",
+          JSON.stringify({ id: userFound.id, role: "actor", ...userFound.user })
+        );
         history.push("/actor/profile");
       }
     } else {

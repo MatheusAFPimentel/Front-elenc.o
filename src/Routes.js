@@ -7,6 +7,7 @@ import ProducerHome from "./pages/ProducerHome";
 import Cadastro from "./pages/Cadastro/Cadastro";
 import Sobre from "./pages/Sobre/Sobre";
 import PainelResultados from "./pages/PainelResultados/PainelResultados";
+import AlterarPerfil from "./pages/AlterarPerfil/AlterarPefil.jsx";
 
 import Navbar from "./Components/Navbar/Navbar";
 
@@ -30,6 +31,7 @@ const Routes = () => {
           <Navbar />
           <Switch>
             <Route path="/actor/profile" exact component={MeuPerfilAtor} />
+            <Route path="/actor/editprofile" exact component={AlterarPerfil} />
             <Route
               path="/producer/profile"
               exact
