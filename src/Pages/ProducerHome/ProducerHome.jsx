@@ -4,6 +4,7 @@ import { useState } from "react";
 //fake data api
 import { getActors } from "../../assets/fakedata/api";
 import CardAtores from "../../Components/CardsAtores/CardsAtores";
+import api from "../../services/api";
 
 const ProducerHome = (props) => {
   const [search, setSearch] = useState([]);
@@ -16,6 +17,15 @@ const ProducerHome = (props) => {
     getActors.then((data) => {
       setSearch(data);
     });
+    const savedActors = JSON.parse(localStorage.getItem("actors")).map(
+      (actor) => actor.id
+    );
+    console.log(savedActors);
+    api
+      .get("/actress/list")
+      .then((data) =>
+        console.log(data.data.filter((actor) => savedActors.includes(actor.id)))
+      );
   }
 
   function toogleRelevance(event) {
