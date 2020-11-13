@@ -8,8 +8,7 @@ export default function Cadastro() {
   const [role, setRole] = useState();
   const [form, setForm] = useState({
     name: "",
-    email: "",
-    password: "",
+    user: { login: "", password: "" },
     company: "",
     cnpj: "",
     gender: "",
@@ -27,7 +26,14 @@ export default function Cadastro() {
   }, [location]);
 
   function handleChange(ev) {
-    setForm({ ...form, [ev.target.name]: ev.target.value });
+    if (ev.target.name === "login" || ev.target.name === "password") {
+      setForm({
+        ...form,
+        user: { ...form.user, [ev.target.name]: ev.target.value },
+      });
+    } else {
+      setForm({ ...form, [ev.target.name]: ev.target.value });
+    }
   }
 
   function handleSubmit(ev) {
@@ -36,18 +42,28 @@ export default function Cadastro() {
       api
         .post("/producer/create", {
           name: form.name,
-          user: { login: form.email, password: form.password },
+          user: { login: form.user.login, password: form.user.password },
         })
-        .then(() => {
-          if (localStorage.getItem("producers")) {
-            localStorage.setItem("producers", []);
+        .then((data) => {
+          if (!localStorage.getItem("producers")) {
+            localStorage.setItem("producers", JSON.stringify([]));
           }
           const fakeData = JSON.parse(localStorage.getItem("producers"));
           localStorage.setItem(
             "producers",
-            JSON.stringify([...fakeData, { ...form }])
+            JSON.stringify([
+              ...fakeData,
+              { id: data.data.id, role: "producer", ...form },
+            ])
+          );
+          localStorage.setItem(
+            "currentUser",
+            JSON.stringify({ id: data.data.id, role: "producer", ...form })
           );
           history.push("/busca");
+        })
+        .catch((err) => {
+          alert(err);
         });
     } else {
       api
@@ -58,18 +74,28 @@ export default function Cadastro() {
           gender: form.gender,
           status: true,
           relevance: 0,
-          user: { login: form.email, password: form.password },
+          user: { login: form.user.login, password: form.user.password },
         })
-        .then(() => {
+        .then((data) => {
           if (!localStorage.getItem("actors")) {
             localStorage.setItem("actors", JSON.stringify([]));
           }
           const fakeData = JSON.parse(localStorage.getItem("actors"));
           localStorage.setItem(
             "actors",
-            JSON.stringify([...fakeData, { ...form }])
+            JSON.stringify([
+              ...fakeData,
+              { id: data.data.id, role: "actor", ...form },
+            ])
+          );
+          localStorage.setItem(
+            "currentUser",
+            JSON.stringify({ id: data.data.id, role: "actor", ...form })
           );
           history.push("/actor/profile");
+        })
+        .catch((err) => {
+          alert(err);
         });
     }
   }
@@ -94,8 +120,8 @@ export default function Cadastro() {
             type="email"
             placeholder="seu@email.com"
             required
-            name="email"
-            value={form?.email}
+            name="login"
+            value={form?.user.login}
           />
 
           <label className="label_cadastro-produtor">Senha:</label>
@@ -106,7 +132,7 @@ export default function Cadastro() {
             placeholder="Senha"
             required
             name="password"
-            value={form?.password}
+            value={form?.user.password}
           />
 
           {role === "producer" && (
