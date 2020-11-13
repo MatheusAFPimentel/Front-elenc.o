@@ -39,10 +39,13 @@ export default function Cadastro() {
           user: { login: form.email, password: form.password },
         })
         .then(() => {
+          if (localStorage.getItem("producers")) {
+            localStorage.setItem("producers", []);
+          }
           const fakeData = JSON.parse(localStorage.getItem("producers"));
           localStorage.setItem(
             "producers",
-            JSON.stringify([...fakeData, { form }])
+            JSON.stringify([...fakeData, { ...form }])
           );
           history.push("/busca");
         });
@@ -58,10 +61,13 @@ export default function Cadastro() {
           user: { login: form.email, password: form.password },
         })
         .then(() => {
+          if (!localStorage.getItem("actors")) {
+            localStorage.setItem("actors", JSON.stringify([]));
+          }
           const fakeData = JSON.parse(localStorage.getItem("actors"));
           localStorage.setItem(
             "actors",
-            JSON.stringify([...fakeData, { form }])
+            JSON.stringify([...fakeData, { ...form }])
           );
           history.push("/actor/profile");
         });
