@@ -3,7 +3,6 @@ import "./home.css";
 import logo from "../../assets/images/logo.svg";
 import { getLogin } from "../../assets/fakedata/api";
 import { useHistory, Link } from "react-router-dom";
-import api from "../../services/api";
 
 function Home() {
   const [email, setEmail] = useState("");
@@ -13,7 +12,6 @@ function Home() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // const savedUsers = localStorage.getItem('users');
     setLoginErr("");
     getLogin(email, password)
       .then((data) => {
