@@ -137,6 +137,10 @@
     margin-left: 55px;
   }
 
+  #botao_entrar {
+    margin-top: 25px;
+  }
+
   .link_cadastro {
     max-width: 200px;
     margin: 10px 20px;
