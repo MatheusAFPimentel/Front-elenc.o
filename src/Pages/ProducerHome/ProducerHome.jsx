@@ -1,4 +1,4 @@
-import "./index.css";
+import "./producerHome.css";
 import { FaSearch, FaArrowUp, FaArrowDown } from "react-icons/fa";
 import { useState } from "react";
 //fake data api

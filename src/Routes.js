@@ -1,13 +1,13 @@
 import { Switch, Route, useLocation } from "react-router-dom";
 
-import Home from "./pages/Home/Home";
-import MeuPerfilAtor from "./pages/MeuPerfilAtor/MeuPerfilAtor";
-import MeuPerfilProdutor from "./pages/MeuPerfilProdutor/MeuPerfilProdutor";
-import ProducerHome from "./pages/ProducerHome";
-import Cadastro from "./pages/Cadastro/Cadastro";
-import Sobre from "./pages/Sobre/Sobre";
-import PainelResultados from "./pages/PainelResultados/PainelResultados";
-
+import Home from "./Pages/Home/Home";
+import MeuPerfilAtor from "./Pages/MeuPerfilAtor/MeuPerfilAtor";
+import MeuPerfilProdutor from "./Pages/MeuPerfilProdutor/MeuPerfilProdutor";
+import ProducerHome from "./Pages/ProducerHome/ProducerHome";
+import Cadastro from "./Pages/Cadastro/Cadastro";
+import Sobre from "./Pages/Sobre/Sobre";
+import ReservasAtor from './Pages/ReservasAtor/ReservasAtor';
+import PainelResultados from "./Pages/PainelResultados/PainelResultados";
 import Navbar from "./Components/Navbar/Navbar";
 
 const Routes = () => {
@@ -38,6 +38,7 @@ const Routes = () => {
             <Route path="/resultados" component={PainelResultados} />
             <Route path="/busca" component={ProducerHome} />
             <Route path="/sobre" component={Sobre} />
+            <Route path="/reservasator" component={ReservasAtor} />
           </Switch>
         </>
       );
