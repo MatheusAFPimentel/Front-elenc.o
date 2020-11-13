@@ -1,36 +1,37 @@
-import React, { useState } from "react";
-import { getActors } from '../../assets/fakedata/api';
+import { useState, useEffect } from "react";
 import { Card, CardBody, CardImg, CardText, CardTitle } from "reactstrap";
-
+import api from "../../services/api";
 
 const MeuPerfilAtor = (props) => {
+  const [actor, setActor] = useState({});
+  const [reserves, setReserves] = useState([]);
 
-  const [actors, setActors] = useState([])
-
-  getActors.then((data) => {
-    setActors(data);
-  });
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("currentUser"));
+    setActor(user);
+    api
+      .get(`/reserve/listByActress/${user.id}`)
+      .then((res) => {
+        setReserves(res.data);
+      })
+      .catch((err) => alert(err));
+  }, []);
 
   return (
     <div>
-      {actors.map((actor) => <Card key={actor.id} actor={actor} >
+      <Card key={actor.id} actor={actor}>
         <CardImg
           className="img_card"
           src={actor.avatar}
           alt="foto do actors"
-        >
-        </CardImg>
+        ></CardImg>
         <CardTitle>
           <h2>{actor.name}</h2>
         </CardTitle>
         <CardText>
-          Idade: {actor.age}
+          Gênero: {actor.gender}
           <br />
-          Gênero: {actor.sex}
-          <br />
-          DRT: {actor.drt}
-          <br />
-          Atuação: {actor.genre.join(", ")}
+          Atuação: {actor.genre}
           <br />
         </CardText>
         <br />
@@ -39,11 +40,15 @@ const MeuPerfilAtor = (props) => {
           Suas reservas
           <hr />
         </CardBody>
-        <CardText>
-          Você não possui reservas
-        </CardText>
-      </Card>)}
+        {reserves.length === 0 ? (
+          <CardText>Você não possui reservas</CardText>
+        ) : (
+          reserves.map((reserve) => (
+            <CardText>Data Reservada: {reserve.reserveDate}</CardText>
+          ))
+        )}
+      </Card>
     </div>
-  )
+  );
 };
 export default MeuPerfilAtor;
