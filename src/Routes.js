@@ -30,6 +30,7 @@ const Routes = () => {
           <Navbar />
           <Switch>
             <Route path="/actor/profile" exact component={MeuPerfilAtor} />
+            <Route path="/actor/editprofile" exact component={AlterarPerfil} />
             <Route
               path="/producer/profile"
               exact
