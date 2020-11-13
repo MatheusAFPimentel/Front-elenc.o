@@ -4,7 +4,6 @@ import { useState } from "react";
 //fake data api
 import { getActors } from "../../assets/fakedata/api";
 import CardAtores from "../../Components/CardsAtores/CardsAtores";
-import api from "../../services/api";
 
 const ProducerHome = (props) => {
   const [search, setSearch] = useState([]);
