@@ -60,3 +60,9 @@
       font-size: 2vh;
     }
 }
+
+@media screen and (min-width: 1920px) {
+    #navbar_container {
+      font-size: 3vh;
+    }
+}
