@@ -1,6 +1,6 @@
 import "./index.css";
 import { FaSearch, FaArrowUp, FaArrowDown } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 //fake data api
 import { getActors } from "../../assets/fakedata/api";
 import CardAtores from "../../Components/CardsAtores/CardsAtores";
@@ -11,7 +11,11 @@ const ProducerHome = (props) => {
   const [priceFilter, setPriceFilter] = useState(false);
   const [relevanceFilter, setRelevanceFilter] = useState(false);
   const [genre, setGenre] = useState([]);
-
+  useEffect(() => {
+    api.get("/producer/58").then((res) => {
+      console.log(res.data);
+    });
+  }, []);
   function handleSubmit(event) {
     event.preventDefault();
     getActors.then((data) => {
@@ -21,11 +25,10 @@ const ProducerHome = (props) => {
       (actor) => actor.id
     );
     console.log(savedActors);
-    api
-      .get("/actress/list")
-      .then((data) =>
-        console.log(data.data.filter((actor) => savedActors.includes(actor.id)))
-      );
+    api.get("/actress/list").then((data) => {
+      console.log(data.data);
+      console.log(data.data.filter((actor) => savedActors.includes(actor.id)));
+    });
   }
 
   function toogleRelevance(event) {
