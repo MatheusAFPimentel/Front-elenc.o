@@ -1,142 +1,143 @@
 /* IDS */
 
 #label_home {
-    margin: 5px 0 !important;
+  margin: 5px 0 !important;
 }
 
-#input_home {
-    padding: 15px;
-    text-transform: uppercase;
-    width: 80%;
-    margin: 5px 0;
+.input_home {
+  padding: 15px;
+  text-transform: uppercase;
+  width: 80%;
+  margin: 5px 0;
 }
 
 #home_logo {
-    width: 90%;
-    margin: 40px 20px 10px;
-    align-self: center;
+  width: 90%;
+  margin: 40px 20px 10px;
+  align-self: center;
 }
 
 #botao_entrar {
-    background-color: #D44D5C;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    margin: 10px 0;
-    font-weight: 700;
-    text-transform: uppercase;
-    width: 70%;
-    transition: 0.2s ease-in-out;
-    font-family: 'Roboto', sans-serif !important;
+  background-color: #d44d5c;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  margin: 10px 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  width: 70%;
+  transition: 0.2s ease-in-out;
+  font-family: "Roboto", sans-serif !important;
 }
 
 #botao_entrar:hover {
-    box-shadow: 5px 5px #D44D5C;
-    color: #D44D5C;
-    background-color: #ffffff;
-  }
+  box-shadow: 5px 5px #d44d5c;
+  color: #d44d5c;
+  background-color: #ffffff;
+}
 
 /* CLASSES */
 
 .home {
-    background: url(../../assets/images/claquete.png) no-repeat;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    font-size: 3vh;
+  background: url(../../assets/images/claquete.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-size: 3vh;
 }
 
 .titulo_login {
-    font-size: 5vh;
-    margin: 10px 0 20px;
+  font-size: 5vh;
+  margin: 10px 0 20px;
 }
 
 .form_login {
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 5px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    padding: 20px;
-    margin: 50px 20px;
-    align-self: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 50px 20px;
+  align-self: center;
 }
 
 .link_cadastro {
-    text-decoration: none;
-    font-size: 2.2vh;
-    max-width: 122px;
-    margin: 3px;
-    color: #D44D5C;
-    text-transform: uppercase;
+  text-decoration: none;
+  font-size: 2.2vh;
+  max-width: 122px;
+  margin: 3px;
+  color: #d44d5c;
+  text-transform: uppercase;
 }
 
 .container_cadastro {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  margin-top: 20px;
 }
 
 /* MEDIA QUERIES */
 
 @media screen and (min-width: 768px) {
-    #label_home, #input_home {
-        font-size: 2vh !important;
-        margin: 15px !important;
-    }
+  #label_home,
+  #input_home {
+    font-size: 2vh !important;
+    margin: 15px !important;
+  }
 
-    #botao_entrar {
-        font-size: 2vh;
-    }
-    
-    #home_logo {
-        max-width: 70%;
-    }
+  #botao_entrar {
+    font-size: 2vh;
+  }
 
-    .link_cadastro {
-        max-width: 150px;
-        margin: 10px 20px;
-    }
+  #home_logo {
+    max-width: 70%;
+  }
+
+  .link_cadastro {
+    max-width: 150px;
+    margin: 10px 20px;
+  }
 }
 
 @media screen and (min-width: 1280px) {
-    .home {
-        background: url(../../assets/images/claquete2.png) no-repeat;
-        background-position: center;
-        background-size: cover;
-    }
+  .home {
+    background: url(../../assets/images/claquete2.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
 
-    #home_logo {
-        max-width: 30%;
-        align-self: flex-start;
-        padding: 0;
-        margin-left: 40px;
-    }
+  #home_logo {
+    max-width: 30%;
+    align-self: flex-start;
+    padding: 0;
+    margin-left: 40px;
+  }
 
-    .form_login {
-        align-self: flex-start;
-        margin-left: 70px;
-    }
+  .form_login {
+    align-self: flex-start;
+    margin-left: 70px;
+  }
 }
 
 @media screen and (min-width: 1920px) {
-    .form_login {
-        align-self: flex-start;
-        margin-left: 100px;
-        padding: 40px 30px;
-    }
+  .form_login {
+    align-self: flex-start;
+    margin-left: 100px;
+    padding: 40px 30px;
+  }
 
-    #home_logo {
-        margin-left: 55px;
-    }
+  #home_logo {
+    margin-left: 55px;
+  }
 
-    .link_cadastro {
-        max-width: 200px;
-        margin: 10px 20px;
-    }
+  .link_cadastro {
+    max-width: 200px;
+    margin: 10px 20px;
+  }
 }

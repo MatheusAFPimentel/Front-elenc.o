@@ -3,6 +3,7 @@ import "./home.css";
 import logo from "../../assets/images/logo.svg";
 import { getLogin } from "../../assets/fakedata/api";
 import { useHistory } from "react-router-dom";
+import api from "../../services/api";
 
 function Home() {
   const [email, setEmail] = useState("");
@@ -12,11 +13,12 @@ function Home() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // const savedUsers = localStorage.getItem('users');
     setLoginErr("");
     getLogin(email, password)
       .then((data) => {
         if (data.role === "producer") {
-          history.push("/dashboard");
+          history.push("/busca");
         } else {
           history.push("/actor/profile");
         }
@@ -40,7 +42,7 @@ function Home() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            id="input_home"
+            className="input_home"
           />
           <br />
           <label id="label_home">Senha</label>
@@ -51,7 +53,7 @@ function Home() {
             onChange={(e) => setPassword(e.target.value)}
             value={password}
             required
-            id="input_home"
+            className="input_home"
           />
           <br />
           <button id="botao_entrar" type="submit">
@@ -59,11 +61,11 @@ function Home() {
           </button>
         </form>
         <div className="container_cadastro">
-          <a href="/registro" className="link_cadastro">
+          <a href="/cadastro" className="link_cadastro">
             Cadastre-se como Produtor
           </a>
           <p>ou</p>
-          <a href="/registro" className="link_cadastro">
+          <a href="/cadastro" className="link_cadastro">
             Cadastre-se como Elenco
           </a>
         </div>

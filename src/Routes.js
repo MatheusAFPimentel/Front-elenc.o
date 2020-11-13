@@ -18,7 +18,7 @@ const Routes = () => {
           <Route path="/" exact component={Home} />
         </Switch>
       );
-    case "/registro":
+    case "/cadastro":
       return (
         <Switch>
           <Route path="/cadastro" component={Cadastro} />

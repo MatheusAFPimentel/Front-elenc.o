@@ -4,6 +4,7 @@ import { useState } from "react";
 //fake data api
 import { getActors } from "../../assets/fakedata/api";
 import CardAtores from "../../Components/CardsAtores/CardsAtores";
+import api from "../../services/api";
 
 const ProducerHome = (props) => {
   const [search, setSearch] = useState([]);
@@ -16,6 +17,8 @@ const ProducerHome = (props) => {
     getActors.then((data) => {
       setSearch(data);
     });
+    api.get("/actress/list").then((data) => console.log(data.data));
+    api.get("/producer/list").then((data) => console.log(data.data));
   }
 
   function toogleRelevance(event) {
