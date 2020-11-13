@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Card, CardBody, CardImg, CardText, CardTitle } from "reactstrap";
+import { Link } from "react-router-dom";
 import api from "../../services/api";
 
 const MeuPerfilAtor = (props) => {
@@ -50,6 +51,10 @@ const MeuPerfilAtor = (props) => {
           ))
         )}
       </Card>
+      <Link to="/actor/editprofile" className="link_cadastro">
+            Alterar perfil
+      </Link> 
+        
     </div>
   );
 };
