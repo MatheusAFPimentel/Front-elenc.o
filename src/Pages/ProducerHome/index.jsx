@@ -10,27 +10,28 @@ const ProducerHome = (props) => {
   const [search, setSearch] = useState([]);
   const [priceFilter, setPriceFilter] = useState(false);
   const [relevanceFilter, setRelevanceFilter] = useState(false);
-  const [genre, setGenre] = useState([]);
+  const [genre, setGenre] = useState("");
   const [date, setDate] = useState("");
+  const [price, setPrice] = useState(0);
+  const [qty, setQty] = useState(0);
 
-  useEffect(() => {
-    api.get("/producer/58").then((res) => {
-      console.log(res.data);
-    });
-  }, []);
   function handleSubmit(event) {
+    setSearch([]);
     event.preventDefault();
-    getActors.then((data) => {
-      setSearch(data);
-    });
+    // getActors.then((data) => {
+    //   setSearch(data);
+    // });
     const savedActors = JSON.parse(localStorage.getItem("actors")).map(
       (actor) => actor.id
     );
     console.log(savedActors);
-    api.get("/actress/list").then((data) => {
-      console.log(data.data);
-      console.log(data.data.filter((actor) => savedActors.includes(actor.id)));
-    });
+    api
+      .get(
+        `/producer/getCast?quantity=${qty}&budget=${price}&genre=${genre}&date=${date}`
+      )
+      .then((res) => {
+        setSearch(res.data);
+      });
   }
 
   function toogleRelevance(event) {
@@ -59,18 +60,24 @@ const ProducerHome = (props) => {
   function tooglePrice() {
     let sortedSearch;
     if (priceFilter) {
-      sortedSearch = search.sort((x, y) => y.salary - x.salary);
+      sortedSearch = search.sort((x, y) => y.price - x.price);
     } else {
-      sortedSearch = search.sort((x, y) => x.salary - y.salary);
+      sortedSearch = search.sort((x, y) => x.price - y.price);
     }
     setPriceFilter(!priceFilter);
     setSearch(sortedSearch);
   }
 
   function handleGenreChange(e) {
-    const genreArray = e.target.value.split(",");
-    const trimmedArray = genreArray.map((genre) => genre.trim());
-    setGenre(trimmedArray);
+    setGenre(e.target.value);
+  }
+
+  function handlePriceChange(e) {
+    setPrice(parseFloat(e.target.value));
+  }
+
+  function handleQtySelect(e) {
+    setQty(parseInt(e.target.value));
   }
 
   function handleReserve(e, id) {
@@ -89,6 +96,7 @@ const ProducerHome = (props) => {
         alert(err);
       });
   }
+
   function handleDateSelect(e) {
     setDate(e.target.value);
   }
@@ -100,17 +108,23 @@ const ProducerHome = (props) => {
         <form className="" onSubmit={handleSubmit} action="">
           <div className="form-group_select">
             <label htmlFor="">De quantos atores você precisa?</label>
-            <select name="" id="select_producer">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
+            <select
+              required
+              name=""
+              onChange={handleQtySelect}
+              value={qty}
+              id="select_producer"
+            >
+              <option value={1}>1</option>
+              <option value={2}>2</option>
+              <option value={3}>3</option>
+              <option value={4}>4</option>
+              <option value={5}>5</option>
+              <option value={6}>6</option>
+              <option value={7}>7</option>
+              <option value={8}>8</option>
+              <option value={9}>9</option>
+              <option value={10}>10</option>
             </select>
           </div>
 
@@ -123,6 +137,18 @@ const ProducerHome = (props) => {
               type="text"
               placeholder="Drama, Ação"
               onChange={handleGenreChange}
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="">Orçamento disponível</label>
+            <input
+              id="input_producer"
+              value={price}
+              type="number"
+              required
+              onChange={handlePriceChange}
             />
           </div>
 
