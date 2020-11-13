@@ -177,6 +177,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     mix-blend-mode: normal;
+    min-height: 100vh;
   }
 
   .producer_results_empty {
@@ -234,5 +235,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     mix-blend-mode: normal;
+    min-height: 100vh;
   }
 }
