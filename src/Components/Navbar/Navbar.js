@@ -11,10 +11,17 @@ import {
   NavItem,
   NavLink,
 } from "reactstrap";
+import { getLogin } from "../../assets/fakedata/api";
 
 function NavBar() {
   const [collapsed, setCollapsed] = useState(true);
   const toggleNavbar = () => setCollapsed(!collapsed);
+
+  // const handleLogout = () => {
+  //   login 
+  //   password
+  //   localStorage.clear();
+  // };
 
   return (
     <div>
@@ -33,6 +40,11 @@ function NavBar() {
             </NavItem>
             <NavItem>
               <NavLink href="/reservas">Reservas</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/home" 
+              // onClick={handleLogout}
+              >Logout</NavLink>
             </NavItem>
           </Nav>
         </Collapse>

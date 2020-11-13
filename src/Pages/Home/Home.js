@@ -3,7 +3,7 @@ import "./home.css";
 import logo from "../../assets/images/logo.svg";
 import { getLogin } from "../../assets/fakedata/api";
 import { useHistory } from "react-router-dom";
-import api from "../../services/api";
+// import api from "../../services/api";
 
 function Home() {
   const [email, setEmail] = useState("");
