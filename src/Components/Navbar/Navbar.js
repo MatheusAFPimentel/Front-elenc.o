@@ -59,6 +59,11 @@ function NavBar() {
                 Sair
               </NavLink>
             </NavItem>
+            <NavItem>
+              <NavLink href="/home" 
+              // onClick={handleLogout}
+              >Logout</NavLink>
+            </NavItem>
           </Nav>
         </Collapse>
         <div className="navfake">

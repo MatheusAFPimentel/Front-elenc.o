@@ -9,6 +9,7 @@
   text-transform: uppercase;
   width: 80%;
   margin: 5px 0;
+  font-weight: 300;
 }
 
 #home_logo {
@@ -134,6 +135,10 @@
 
   #home_logo {
     margin-left: 55px;
+  }
+
+  #botao_entrar {
+    margin-top: 25px;
   }
 
   .link_cadastro {
