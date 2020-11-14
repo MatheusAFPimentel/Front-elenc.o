@@ -136,7 +136,7 @@
   }
 
   .producer_titulo {
-    margin: 0 0 20px;
+    margin: 30px 20px;
     padding: 0;
   }
 
@@ -151,18 +151,19 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    padding: 20px;
   }
 
   .producer-filter_text {
-    text-align: left;
-    position: relative;
-    padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
   }
 
-  .producer-filter_p {
-    position: absolute;
+  .producer-filter_text p {
+    margin: 30px 20px;
   }
+
   .producer_results {
     display: flex;
     flex-direction: column;
