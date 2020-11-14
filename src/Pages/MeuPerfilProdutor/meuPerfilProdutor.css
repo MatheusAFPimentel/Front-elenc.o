@@ -4,11 +4,29 @@
   grid-template-columns: 1fr;
 }
 /* classes */
+
+.producer-stat-res-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
 .reservas-grid-producer {
   display: grid;
+  grid-column: 1 / span 4;
   grid-template-columns: 1fr;
 }
 
+.producer-stats {
+  grid-column: 1 / span 4;
+}
+.stat {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  background-color: #f5e9e2;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
 .btn-alterar_perfil {
   color: black;
   text-transform: uppercase;
@@ -68,7 +86,13 @@
   }
   #producer-pageGrid {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 0.8fr 2fr;
+    margin-right: 20px;
+  }
+  .reservas-grid-producer {
+    display: grid;
+    grid-column: 1 / span 4;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -79,12 +103,13 @@
   }
   #producer-pageGrid {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 0.8fr 2fr;
   }
 
   .reservas-grid-producer {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-column: 1 / span 4;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .card_expand {
@@ -95,6 +120,11 @@
 
 @media screen and (min-width: 1920px) {
   .perfil_producer_container {
-    font-size: 3vh;
+    font-size: 2vh;
+  }
+  .reservas-grid-producer {
+    display: grid;
+    grid-column: 1 / span 4;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
