@@ -1,7 +1,7 @@
 /* IDS */
 .reservas-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
 }
 
 .btn-alterar_perfil {
@@ -67,11 +67,16 @@
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1024px) {
   #card_ator {
     flex-direction: row;
     font-size: 2vh;
     padding: 40px 70px;
+  }
+
+  .reservas-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 
   .card_expand {
