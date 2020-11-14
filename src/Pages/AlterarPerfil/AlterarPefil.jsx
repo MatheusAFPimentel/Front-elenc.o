@@ -106,22 +106,22 @@ export default function Cadastro() {
   }
   return (
     <>
-      <div className="container_cadastro-produtor">
-        <form className="form_cadastro-produtor" onSubmit={handleSubmit}>
-          <label className="label_cadastro-produtor">Nome:</label>
+      <div className="container_alterarperfil">
+        <form className="form_alterarperfil" onSubmit={handleSubmit}>
+          <label className="label_alterarperfil">Nome:</label>
           <input
             onChange={handleChange}
-            className="input_cadastro-produtor"
+            className="input_alterarperfil"
             type="text"
             placeholder="nome completo"
             required
             name="name"
             value={form?.name}
           />
-          <label className="label_cadastro-produtor">Email:</label>
+          <label className="label_alterarperfil">Email:</label>
           <input
             onChange={handleChange}
-            className="input_cadastro-produtor"
+            className="input_alterarperfil"
             type="email"
             placeholder="seu@email.com"
             required
@@ -129,10 +129,10 @@ export default function Cadastro() {
             value={form?.user.login}
           />
 
-          <label className="label_cadastro-produtor">Senha:</label>
+          <label className="label_alterarperfil">Senha:</label>
           <input
             onChange={handleChange}
-            className="input_cadastro-produtor"
+            className="input_alterarperfil"
             type="password"
             placeholder="Senha"
             required
@@ -142,12 +142,12 @@ export default function Cadastro() {
 
           {role === "producer" && (
             <>
-              <label className="label_cadastro-produtor">
+              <label className="label_alterarperfil">
                 Nome da produtora:
               </label>
               <input
                 onChange={handleChange}
-                className="input_cadastro-produtor"
+                className="input_alterarperfil"
                 type="text"
                 placeholder="nome da produtora"
                 required
@@ -155,10 +155,10 @@ export default function Cadastro() {
                 value={form?.company}
               />
 
-              <label className="label_cadastro-produtor">CNPJ:</label>
+              <label className="label_alterarperfil">CNPJ:</label>
               <input
                 onChange={handleChange}
-                className="input_cadastro-produtor"
+                className="input_alterarperfil"
                 type="text"
                 placeholder="CNPJ"
                 required
@@ -170,42 +170,42 @@ export default function Cadastro() {
 
           {role === "actor" && (
             <>
-              <label className="label_cadastro-produtor">Sexo:</label>
+              <label className="label_alterarperfil">Sexo:</label>
               <input
                 onChange={handleChange}
-                className="input_cadastro-produtor"
+                className="input_alterarperfil"
                 type="text"
                 placeholder="Masculino, Feminino, Outros"
                 required
                 name="gender"
                 value={form?.gender}
               />
-              <label className="label_cadastro-produtor">Cachê:</label>
+              <label className="label_alterarperfil">Cachê:</label>
               <input
                 onChange={handleChange}
-                className="input_cadastro-produtor"
+                className="input_alterarperfil"
                 type="number"
                 placeholder="Cachê"
                 required
                 name="price"
                 value={form?.price}
               />
-              <label className="label_cadastro-produtor">
+              <label className="label_alterarperfil">
                 Genero que atua:
               </label>
               <input
                 onChange={handleChange}
-                className="input_cadastro-produtor"
+                className="input_alterarperfil"
                 type="text"
                 placeholder="Drama, Comédia"
                 required
                 name="genre"
                 value={form?.genre}
               />
-              <label className="label_cadastro-produtor">Foto:</label>
+              <label className="label_alterarperfil">Foto:</label>
               <input
                 onChange={handleChange}
-                className="input_cadastro-produtor"
+                className="input_alterarperfil"
                 type="File"
                 required
                 name="avatar"
@@ -213,10 +213,10 @@ export default function Cadastro() {
               />
             </>
           )}
-          <label className="label_cadastro-produtor">Telefone:</label>
+          <label className="label_alterarperfil">Telefone:</label>
           <input
             onChange={handleChange}
-            className="input_cadastro-produtor"
+            className="input_alterarperfil"
             type="tel"
             placeholder="+55 (XX) XXXX-XXXX"
             required
@@ -224,7 +224,7 @@ export default function Cadastro() {
             value={form?.phone}
           />
 
-          <input type="submit" id="btncadastro" value="Registrar"></input>
+          <input type="submit" id="btn_alterar" value="Alterar"></input>
         </form>
       </div>
     </>
