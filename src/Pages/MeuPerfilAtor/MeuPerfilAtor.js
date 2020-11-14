@@ -73,7 +73,7 @@ const MeuPerfilAtor = (props) => {
                   <header>
                     <span>
                       <FcCalendar />
-                      Datas reservada:{" "}
+                      Data reservada:{" "}
                       {new Date(reserve.reserveDate).toLocaleDateString()}
                     </span>
                     <hr />

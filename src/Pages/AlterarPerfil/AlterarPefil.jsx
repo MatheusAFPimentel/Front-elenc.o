@@ -66,7 +66,7 @@ export default function Cadastro() {
             "currentUser",
             JSON.stringify({ id: data.data.id, role: "producer", ...form })
           );
-          history.push("/busca");
+          history.push("/producer/profile");
         })
         .catch((err) => {
           alert(err);
