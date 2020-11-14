@@ -57,12 +57,12 @@
 
 @media screen and (min-width: 1280px) {
     #navbar_container {
-      font-size: 2vh;
+      font-size: 2.5vh;
     }
 }
 
 @media screen and (min-width: 1920px) {
     #navbar_container {
-      font-size: 2.5vh;
+      font-size: 2.2vh;
     }
 }
