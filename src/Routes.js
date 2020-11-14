@@ -6,6 +6,7 @@ import MeuPerfilProdutor from "./Pages/MeuPerfilProdutor/MeuPerfilProdutor";
 import ProducerHome from "./Pages/ProducerHome";
 import Cadastro from "./Pages/Cadastro/Cadastro";
 import Sobre from "./Pages/Sobre/Sobre";
+import AlterarPerfil from "./Pages/AlterarPerfil/AlterarPefil";
 import PainelResultados from "./Pages/PainelResultados/PainelResultados";
 
 import Navbar from "./Components/Navbar/Navbar";

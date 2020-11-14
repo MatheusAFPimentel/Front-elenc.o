@@ -91,5 +91,10 @@
     #btncadastro {
       font-size: 2.5vh;
     }
+
+    .input_cadastro-produtor,
+    .label_cadastro-produtor {
+      font-size: 2vh;
+    }
   }
   

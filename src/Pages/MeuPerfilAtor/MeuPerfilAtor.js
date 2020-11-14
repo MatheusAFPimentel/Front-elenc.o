@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Card, CardBody, CardImg, CardText, CardTitle } from "reactstrap";
 import { Link } from "react-router-dom";
 import api from "../../services/api";
-import './meuPerfilAtor.css';
+import "./meuPerfilAtor.css";
 // import kitten from 'https://placekitten.com/200/300';
 
 const MeuPerfilAtor = (props) => {
@@ -29,35 +29,33 @@ const MeuPerfilAtor = (props) => {
           alt="foto do ator"
         ></CardImg>
         <div className="card_expand">
-        <CardTitle>
-          <h2>{actor.name}</h2>
-        </CardTitle>
-        <CardText>
-          Gênero: {actor.gender}
-          <br />
-          Atuação: {actor.genre}
-          <br />
-        </CardText>
-        <CardBody id="card_body">
-          <hr />
-        {reserves.length === 0 ? (
-          <CardText>Você não possui reservas</CardText>
-        ) : (
-          reserves.map((reserve, index) => (
-            <CardText key={index}>
-              Datas reservadas: {reserve.reserveDate}
-            </CardText>
-          ))
-        )}
+          <CardTitle>
+            <h2>{actor.name}</h2>
+          </CardTitle>
+          <CardText>
+            Gênero: {actor.gender}
+            <br />
+            Atuação: {actor.genre}
+            <br />
+          </CardText>
+          <CardBody id="card_body">
             <hr />
-            <a id="editar_perfil_ator" href="/">Editar perfil</a>
-        </CardBody>
+            {reserves.length === 0 ? (
+              <CardText>Você não possui reservas</CardText>
+            ) : (
+              reserves.map((reserve, index) => (
+                <CardText key={index}>
+                  Datas reservadas: {reserve.reserveDate}
+                </CardText>
+              ))
+            )}
+            <hr />
+            <Link to="/actor/editprofile" className="btn-alterar_perfil">
+              Alterar perfil
+            </Link>
+          </CardBody>
         </div>
       </Card>
-      <Link to="/actor/editprofile" className="link_cadastro">
-            Alterar perfil
-      </Link> 
-        
     </div>
   );
 };

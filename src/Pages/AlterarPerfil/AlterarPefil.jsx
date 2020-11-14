@@ -224,7 +224,7 @@ export default function Cadastro() {
             value={form?.phone}
           />
 
-          <input type="submit" id="btncadastro" value="Registrar"></input>
+          <input type="submit" id="btncadastro" value="Alterar"></input>
         </form>
       </div>
     </>
