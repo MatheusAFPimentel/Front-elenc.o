@@ -1,75 +1,92 @@
 /* IDS */
+.reservas-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
 
 .btn-alterar_perfil {
-    color: black;
-    text-transform: uppercase;
+  color: black;
+  text-transform: uppercase;
 }
 
 #editar_perfil_ator:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 #card_ator {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.5;
-    padding: 30px 20px 40px;
-    margin: 50px 0;
-    height: fit-content;
-    width: 80%;
-    background-color: #f5e9e2;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+  padding: 30px 20px 40px;
+  margin: 50px 0;
+  height: fit-content;
+  width: 80%;
+  background-color: #f5e9e2;
+}
+#card_reserva {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+  height: fit-content;
+  width: fit-content;
+  background-color: #f5e9e2;
 }
 
 #card_body {
-    padding: 0;
-    flex: 0;
-    font-weight: 500;
+  padding: 0;
+  flex: 0;
+  font-weight: 500;
 }
 
 /* CLASSES */
 
 .perfil_ator_container {
-    display: flex;
-    justify-content: center;
-    background-image: url(../../assets/images/home_chairs.png);
-    background-position: center;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-image: url(../../assets/images/home_chairs.png);
+  background-position: center;
+  width: 100%;
+  background-size: cover;
+  min-height: 100vh;
 }
 
 .img_card_ator {
-    max-width: 150px;
-    margin-bottom: 20px;
+  max-width: 150px;
+  margin-bottom: 20px;
 }
 
 /* MEDIA QUERIES */
 
 @media screen and (min-width: 768px) {
-    .perfil_ator_container {
-        height: 100vh;
-    }
-
-    #card_ator {
-        width: fit-content;
-        padding: 40px;
-        margin-top: 100px;
-    }
+  #card_ator {
+    width: fit-content;
+    padding: 40px;
+    margin-top: 100px;
+  }
 }
 
-@media screen and (min-width: 1280px) {
-    #card_ator {
-        flex-direction: row;
-        font-size: 2vh;
-        padding: 40px 70px;
-    }
+@media screen and (min-width: 1024px) {
+  #card_ator {
+    flex-direction: row;
+    font-size: 2vh;
+    padding: 40px 70px;
+  }
 
-    .card_expand {
-        padding: 30px 10px 40px 30px;
-        text-align: left;
-    }
+  .reservas-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card_expand {
+    padding: 30px 10px 40px 30px;
+    text-align: left;
+  }
 }
 
 @media screen and (min-width: 1920px) {
-    .perfil_ator_container {
-        font-size: 3vh;
-    }
+  .perfil_ator_container {
+    font-size: 3vh;
+  }
 }

@@ -25,7 +25,9 @@ export default function Cadastro() {
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("currentUser"));
     setRole(user.role);
-    setForm({ ...form, ...user });
+    setForm((prevState) => {
+      return { ...prevState, ...user };
+    });
   }, []);
 
   function handleChange(ev) {
@@ -115,7 +117,7 @@ export default function Cadastro() {
             placeholder="nome completo"
             required
             name="name"
-            value={form?.name}
+            value={form?.name || ""}
           />
           <label className="label_alterarperfil">Email:</label>
           <input
@@ -125,7 +127,7 @@ export default function Cadastro() {
             placeholder="seu@email.com"
             required
             name="login"
-            value={form?.user.login}
+            value={form?.user.login || ""}
           />
 
           <label className="label_alterarperfil">Senha:</label>
@@ -136,7 +138,7 @@ export default function Cadastro() {
             placeholder="Senha"
             required
             name="password"
-            value={form?.user.password}
+            value={form?.user.password || ""}
           />
 
           {role === "producer" && (
@@ -149,7 +151,7 @@ export default function Cadastro() {
                 placeholder="nome da produtora"
                 required
                 name="company"
-                value={form?.company}
+                value={form?.company || ""}
               />
 
               <label className="label_alterarperfil">CNPJ:</label>
@@ -160,7 +162,7 @@ export default function Cadastro() {
                 placeholder="CNPJ"
                 required
                 name="cnpj"
-                value={form?.cnpj}
+                value={form?.cnpj || ""}
               />
             </>
           )}
@@ -175,7 +177,7 @@ export default function Cadastro() {
                 placeholder="Masculino, Feminino, Outros"
                 required
                 name="gender"
-                value={form?.gender}
+                value={form?.gender || ""}
               />
               <label className="label_alterarperfil">Cachê:</label>
               <input
@@ -185,7 +187,7 @@ export default function Cadastro() {
                 placeholder="Cachê"
                 required
                 name="price"
-                value={form?.price}
+                value={form?.price || 0}
               />
               <label className="label_alterarperfil">Genero que atua:</label>
               <input
@@ -195,11 +197,10 @@ export default function Cadastro() {
                 placeholder="Drama, Comédia"
                 required
                 name="genre"
-                value={form?.genre}
+                value={form?.genre || ""}
               />
               <label className="label_alterarperfil">Foto:</label>
               <input
-                onChange={handleChange}
                 className="input_alterarperfil"
                 type="File"
                 name="avatar"
@@ -214,7 +215,7 @@ export default function Cadastro() {
             placeholder="+55 (XX) XXXX-XXXX"
             required
             name="phone"
-            value={form?.phone}
+            value={form?.phone || ""}
           />
 
           <button id="btn_alterar">Alterar</button>

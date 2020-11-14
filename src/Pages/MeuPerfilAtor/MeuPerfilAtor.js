@@ -3,7 +3,11 @@ import { Card, CardBody, CardImg, CardText, CardTitle } from "reactstrap";
 import { Link } from "react-router-dom";
 import api from "../../services/api";
 import "./meuPerfilAtor.css";
-// import kitten from 'https://placekitten.com/200/300';
+import { HiMail } from "react-icons/hi";
+import { GiMoneyStack } from "react-icons/gi";
+import { FaTheaterMasks, FaPersonBooth } from "react-icons/fa";
+import { FcCalendar } from "react-icons/fc";
+import { MdPerson } from "react-icons/md";
 
 const MeuPerfilAtor = (props) => {
   const [actor, setActor] = useState({});
@@ -22,7 +26,7 @@ const MeuPerfilAtor = (props) => {
 
   return (
     <div className="perfil_ator_container">
-      <Card id="card_ator" key={actor.id} actor={actor}>
+      <Card id="card_ator">
         <CardImg
           className="img_card_ator"
           src="https://placekitten.com/200/300"
@@ -30,32 +34,59 @@ const MeuPerfilAtor = (props) => {
         ></CardImg>
         <div className="card_expand">
           <CardTitle>
-            <h2>{actor.name}</h2>
+            <h2>
+              <MdPerson />
+              {actor?.name}
+            </h2>
           </CardTitle>
+          <hr />
           <CardText>
-            Gênero: {actor.gender}
+            <FaPersonBooth />
+            Gênero: {actor?.gender}
             <br />
-            Atuação: {actor.genre}
+            <FaTheaterMasks />
+            Atuação: {actor?.genre}
+            <br />
+            <GiMoneyStack />
+            Cachê: R${parseFloat(actor?.price).toLocaleString()}
+            <br />
+            <HiMail />
+            Contato: {actor.user?.login}
             <br />
           </CardText>
           <CardBody id="card_body">
-            <hr />
-            {reserves.length === 0 ? (
-              <CardText>Você não possui reservas</CardText>
-            ) : (
-              reserves.map((reserve, index) => (
-                <CardText key={index}>
-                  Datas reservadas: {reserve.reserveDate}
-                </CardText>
-              ))
-            )}
-            <hr />
             <Link to="/actor/edit/profile" className="btn-alterar_perfil">
               Alterar perfil
             </Link>
           </CardBody>
         </div>
       </Card>
+
+      <div className="reservas-grid">
+        {reserves.length === 0 ? (
+          <CardText>Você não possui reservas</CardText>
+        ) : (
+          reserves.map((reserve, index) => (
+            <Card id="card_reserva" key={reserve.id}>
+              <div className="card_expand">
+                <CardBody id="card_body">
+                  <header>
+                    <span>
+                      <FcCalendar />
+                      Datas reservada:{" "}
+                      {new Date(reserve.reserveDate).toLocaleDateString()}
+                    </span>
+                    <hr />
+                  </header>
+                  <CardText>
+                    <span>Produtor da Obra: {reserve.producer.name}</span>
+                  </CardText>
+                </CardBody>
+              </div>
+            </Card>
+          ))
+        )}
+      </div>
     </div>
   );
 };
