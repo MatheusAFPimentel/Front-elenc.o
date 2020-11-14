@@ -14,7 +14,6 @@ export default function Cadastro() {
     gender: "",
     price: 0,
     genre: "",
-    avatar: "",
     phone: "",
     status: false,
     role: "",
@@ -142,9 +141,7 @@ export default function Cadastro() {
 
           {role === "producer" && (
             <>
-              <label className="label_alterarperfil">
-                Nome da produtora:
-              </label>
+              <label className="label_alterarperfil">Nome da produtora:</label>
               <input
                 onChange={handleChange}
                 className="input_alterarperfil"
@@ -190,9 +187,7 @@ export default function Cadastro() {
                 name="price"
                 value={form?.price}
               />
-              <label className="label_alterarperfil">
-                Genero que atua:
-              </label>
+              <label className="label_alterarperfil">Genero que atua:</label>
               <input
                 onChange={handleChange}
                 className="input_alterarperfil"
@@ -207,9 +202,7 @@ export default function Cadastro() {
                 onChange={handleChange}
                 className="input_alterarperfil"
                 type="File"
-                required
                 name="avatar"
-                value={form?.avatar}
               />
             </>
           )}
@@ -224,7 +217,7 @@ export default function Cadastro() {
             value={form?.phone}
           />
 
-          <input type="submit" id="btn_alterar" value="Alterar"></input>
+          <button id="btn_alterar">Alterar</button>
         </form>
       </div>
     </>

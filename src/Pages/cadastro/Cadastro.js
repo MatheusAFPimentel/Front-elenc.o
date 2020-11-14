@@ -202,7 +202,6 @@ export default function Cadastro() {
                 onChange={handleChange}
                 className="input_cadastro-produtor"
                 type="File"
-                required
                 name="avatar"
                 value={form?.avatar}
               />
