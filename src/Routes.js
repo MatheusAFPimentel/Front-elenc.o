@@ -4,7 +4,7 @@ import Home from "./Pages/Home/Home";
 import MeuPerfilAtor from "./Pages/MeuPerfilAtor/MeuPerfilAtor";
 import MeuPerfilProdutor from "./Pages/MeuPerfilProdutor/MeuPerfilProdutor";
 import ProducerHome from "./Pages/ProducerHome";
-import Cadastro from "./Pages/Cadastro/Cadastro";
+import Cadastro from "./Pages/Cadastrar/Cadastro";
 import Sobre from "./Pages/Sobre/Sobre";
 import AlterarPerfil from "./Pages/AlterarPerfil/AlterarPefil";
 import Footer from "./Components/Footer/Footer";
