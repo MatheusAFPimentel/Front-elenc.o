@@ -16,10 +16,6 @@ const ProducerHome = (props) => {
   function handleSubmit(event) {
     setSearch([]);
     event.preventDefault();
-    const savedActors = JSON.parse(localStorage.getItem("actors")).map(
-      (actor) => actor.id
-    );
-    console.log(savedActors);
     api
       .get(
         `/producer/getCast?quantity=${qty}&budget=${price}&genre=${genre}&date=${date}`
@@ -155,6 +151,7 @@ const ProducerHome = (props) => {
               type="date"
               required
               onChange={handleDateSelect}
+              min={new Date().toISOString().split("T")[0]}
             />
           </div>
 
