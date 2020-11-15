@@ -21,7 +21,7 @@ function NavBar() {
         <NavLink
           className="nav-item"
           to={
-            JSON.parse(localStorage.getItem("currentUser")).role === "producer"
+            JSON.parse(localStorage.getItem("currentUser"))?.role === "producer"
               ? "/busca"
               : "/actor/profile"
           }
@@ -35,7 +35,7 @@ function NavBar() {
               <NavLink
                 className="nav-item"
                 to={
-                  JSON.parse(localStorage.getItem("currentUser")).role ===
+                  JSON.parse(localStorage.getItem("currentUser"))?.role ===
                   "producer"
                     ? "/producer/profile"
                     : "/actor/profile"
@@ -44,7 +44,7 @@ function NavBar() {
                 Perfil
               </NavLink>
             </NavItem>
-            {JSON.parse(localStorage.getItem("currentUser")).role ===
+            {JSON.parse(localStorage.getItem("currentUser"))?.role ===
               "producer" && (
               <NavItem>
                 <NavLink className="nav-item" to="/busca">
@@ -70,7 +70,7 @@ function NavBar() {
             <NavLink
               className="nav-item"
               to={
-                JSON.parse(localStorage.getItem("currentUser")).role ===
+                JSON.parse(localStorage.getItem("currentUser"))?.role ===
                 "producer"
                   ? "/producer/profile"
                   : "/actor/profile"
@@ -79,7 +79,7 @@ function NavBar() {
               Perfil
             </NavLink>
           </NavItem>
-          {JSON.parse(localStorage.getItem("currentUser")).role ===
+          {JSON.parse(localStorage.getItem("currentUser"))?.role ===
             "producer" && (
             <NavItem>
               <NavLink className="nav-item" to="/busca">
