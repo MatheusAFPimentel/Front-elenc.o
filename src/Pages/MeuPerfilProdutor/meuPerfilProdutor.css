@@ -1,10 +1,14 @@
 /* IDS */
 #producer-pageGrid {
   display: grid;
+  grid-gap: 20px;
   grid-template-columns: 1fr;
 }
 /* classes */
-
+#producer-empty-reserves {
+  grid-column: 1/ 4 span;
+  width: 100%;
+}
 .producer-stat-res-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -26,6 +30,7 @@
   align-items: center;
   justify-content: center;
   margin: 20px;
+  width: 100%;
 }
 .btn-alterar_perfil {
   color: black;
@@ -37,6 +42,7 @@
 }
 
 #card_producer {
+  width: 100%;
   display: flex;
   flex-direction: column;
   line-height: 1.5;
@@ -44,6 +50,7 @@
   height: fit-content;
   background-color: #f5e9e2;
 }
+
 #card_reserva {
   display: flex;
   flex-direction: column;
@@ -74,6 +81,7 @@
 }
 
 .img_card_producer {
+  width: 100%;
   max-width: 150px;
   margin-bottom: 20px;
 }
@@ -82,10 +90,12 @@
 
 @media screen and (min-width: 768px) {
   #card_producer {
+    width: 100%;
     width: fit-content;
   }
   #producer-pageGrid {
     display: grid;
+    grid-gap: 20px;
     grid-template-columns: 0.8fr 2fr;
     margin-right: 20px;
   }
@@ -98,11 +108,13 @@
 
 @media screen and (min-width: 1024px) {
   #card_producer {
+    width: 100%;
     flex-direction: row;
     font-size: 2vh;
   }
   #producer-pageGrid {
     display: grid;
+    grid-gap: 20px;
     grid-template-columns: 0.8fr 2fr;
   }
 

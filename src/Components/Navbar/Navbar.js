@@ -49,11 +49,7 @@ function NavBar() {
                 Sobre
               </NavLink>
             </NavItem>
-            <NavItem>
-              <NavLink className="nav-item" to="/reservas">
-                Reservas
-              </NavLink>
-            </NavItem>
+            <NavItem></NavItem>
             <NavItem>
               <NavLink className="nav-item" to="/" onClick={handleLogout}>
                 Sair
@@ -78,11 +74,6 @@ function NavBar() {
           <NavItem>
             <NavLink className="nav-item" to="/sobre">
               Sobre
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink className="nav-item" to="/reservas">
-              Reservas
             </NavLink>
           </NavItem>
           <NavItem>

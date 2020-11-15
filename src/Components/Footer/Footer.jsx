@@ -1,11 +1,18 @@
-import React from "react";
 import { FcLike } from "react-icons/fc";
-const Footer = (props) => (
-  <footer className="footer">
-    <span>
+import { FaGithub } from "react-icons/fa";
+import "./footer.css";
+
+const Footer = () => (
+  <div className="footer">
+    <div className="footer-links">
+      <a href="https://github.com/MatheusAFPimentel/Front-elenc.o">
+        <FaGithub />
+      </a>
+    </div>
+    <div className="footer-copyright">
       Desenvolvido com <FcLike /> pelo grupo Sandy e os Juniors.
-    </span>
-  </footer>
+    </div>
+  </div>
 );
 
 export default Footer;

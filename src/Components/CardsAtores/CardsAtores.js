@@ -14,7 +14,7 @@ function CardsAtores({ actor, handleReserve }) {
     <Card className="card">
       <CardImg
         className="img_card"
-        src={actor.avatar}
+        src="https://placekitten.com/200/300"
         alt="foto do actors"
       ></CardImg>
       <CardBody>

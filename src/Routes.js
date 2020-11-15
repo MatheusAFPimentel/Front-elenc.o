@@ -7,8 +7,7 @@ import ProducerHome from "./pages/ProducerHome";
 import Cadastro from "./pages/Cadastro/Cadastro";
 import Sobre from "./pages/Sobre/Sobre";
 import AlterarPerfil from "./pages/AlterarPerfil/AlterarPefil";
-import PainelResultados from "./pages/PainelResultados/PainelResultados";
-
+import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/Navbar/Navbar";
 
 const Routes = () => {
@@ -37,10 +36,10 @@ const Routes = () => {
               exact
               component={MeuPerfilProdutor}
             />
-            <Route path="/resultados" component={PainelResultados} />
             <Route path="/busca" component={ProducerHome} />
             <Route path="/sobre" component={Sobre} />
           </Switch>
+          <Footer />
         </>
       );
   }

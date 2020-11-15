@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../../services/api";
 
-import { Card, CardBody, CardImg, CardText, CardTitle } from "reactstrap";
+import { Card, CardBody, CardText, CardTitle } from "reactstrap";
 import { HiMail } from "react-icons/hi";
 import { FcCalendar } from "react-icons/fc";
 import { MdPerson } from "react-icons/md";
@@ -11,24 +11,10 @@ import "./meuPerfilProdutor.css";
 const MeuPerfilProdutor = (props) => {
   const [user, setUser] = useState({});
   const [reserves, setReserves] = useState([]);
-  // const [stats, setStats] = useState({
-  // mostReservedDate: {},
-  // mostReservedActress: {},
-  // });
 
   useEffect(() => {
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
     setUser({ ...currentUser });
-    // api
-    //   .get(`/reserve/getMostReservedDatesByProducer/${currentUser.id}`)
-    //   .then((res) => {
-    //     setStats({ mostReservedDate: res.data });
-    //   });
-    // api
-    //   .get(`/reserve/getMostReservedActressesByProducer/${currentUser.id}`)
-    //   .then((res) => {
-    //     setStats({ mostReservedActress: res.data });
-    //   });
     api
       .get(`/reserve/listByProducer/${currentUser.id}`)
       .then((res) => setReserves(res.data));
@@ -67,7 +53,7 @@ const MeuPerfilProdutor = (props) => {
           </div>
           <div className="reservas-grid-producer">
             {reserves.length === 0 ? (
-              <Card>
+              <Card id="producer-empty-reserves">
                 <CardText>Você não possui reservas</CardText>
               </Card>
             ) : (
