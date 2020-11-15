@@ -44,6 +44,14 @@ function NavBar() {
                 Perfil
               </NavLink>
             </NavItem>
+            {JSON.parse(localStorage.getItem("currentUser")).role ===
+              "producer" && (
+              <NavItem>
+                <NavLink className="nav-item" to="/buscar">
+                  Buscar Elenco
+                </NavLink>
+              </NavItem>
+            )}
             <NavItem>
               <NavLink className="nav-item" to="/sobre">
                 Sobre
@@ -71,6 +79,14 @@ function NavBar() {
               Perfil
             </NavLink>
           </NavItem>
+          {JSON.parse(localStorage.getItem("currentUser")).role ===
+            "producer" && (
+            <NavItem>
+              <NavLink className="nav-item" to="/buscar">
+                Buscar Elenco
+              </NavLink>
+            </NavItem>
+          )}
           <NavItem>
             <NavLink className="nav-item" to="/sobre">
               Sobre
