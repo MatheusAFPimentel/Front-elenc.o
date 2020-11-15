@@ -11,10 +11,30 @@ import "./meuPerfilProdutor.css";
 const MeuPerfilProdutor = (props) => {
   const [user, setUser] = useState({});
   const [reserves, setReserves] = useState([]);
+  const [mostReservedDate, setMostReservedDate] = useState("");
+  const [mostReservedActor, setMostReservedActor] = useState("");
 
   useEffect(() => {
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
     setUser({ ...currentUser });
+    api
+      .get(`/reserve/getMostReservedDatesByProducer/${currentUser.id}`)
+      .then((res) => {
+        const mostArray = Object.entries(res.data);
+        const mostReserved = mostArray.sort((x, y) => {
+          return x[1] >= y[1];
+        })[0][0];
+        setMostReservedDate(mostReserved);
+      });
+    api
+      .get(`/reserve/getMostReservedActressesByProducer/${currentUser.id}`)
+      .then((res) => {
+        const mostArray = Object.entries(res.data);
+        const mostReserved = mostArray.sort((x, y) => {
+          return x[1] >= y[1];
+        })[0][0];
+        setMostReservedActor(mostReserved);
+      });
     api
       .get(`/reserve/listByProducer/${currentUser.id}`)
       .then((res) => setReserves(res.data));
@@ -49,6 +69,13 @@ const MeuPerfilProdutor = (props) => {
           <div className="producer-stats">
             <div className="stat">
               <h2>Suas Reservas:</h2>
+              <div className="stats">
+                <p>Ator Mais Reservado: {mostReservedActor}</p>
+                <p>
+                  Data Mais Reservada:{" "}
+                  {new Date(mostReservedDate).toLocaleDateString()}
+                </p>
+              </div>
             </div>
           </div>
           <div className="reservas-grid-producer">
@@ -70,11 +97,13 @@ const MeuPerfilProdutor = (props) => {
                         <hr />
                       </header>
                       <CardText>
-                        <p>Dia Reservado:{reserve.reserveDate}</p>
-                        <p>Nome do producer: {reserve.actress.name}</p>
-                        <p>Cachê do producer: {reserve.actress.price}</p>
-                        <p>Sexo do producer: {reserve.actress.gender}</p>
-                        <p>Gênero de Atuação: {reserve.actress.genre}</p>
+                        <p>Ator reservado: {reserve.actress.name}</p>
+                        <p>
+                          Cachê do ator: R$
+                          {parseFloat(reserve.actress.price).toLocaleString()}
+                        </p>
+                        <p>Sexo do ator: {reserve.actress.gender}</p>
+                        <p>Gênero da Atuação: {reserve.actress.genre}</p>
                         <br />
                       </CardText>
                     </CardBody>
