@@ -16,32 +16,40 @@ const MeuPerfilProdutor = (props) => {
 
   useEffect(() => {
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-    if (!!currentUser) {
+    if (!!currentUser && currentUser.role !== "actor") {
       setUser({ ...currentUser });
       api
         .get(`/reserve/getMostReservedDatesByProducer/${currentUser.id}`)
         .then((res) => {
           const mostArray = Object.entries(res.data);
-          const mostReserved = mostArray.sort((x, y) => {
-            return x[1] >= y[1];
-          })[0][0];
-          setMostReservedDate(mostReserved);
+          if (mostArray.length > 0) {
+            const mostReserved = mostArray.sort((x, y) => {
+              return x[1] >= y[1];
+            })[0][0];
+            setMostReservedDate(mostReserved);
+          }
         });
       api
         .get(`/reserve/getMostReservedActressesByProducer/${currentUser.id}`)
         .then((res) => {
           const mostArray = Object.entries(res.data);
-          const mostReserved = mostArray.sort((x, y) => {
-            return x[1] >= y[1];
-          })[0][0];
-          setMostReservedActor(mostReserved);
+          if (mostArray.length > 0) {
+            const mostReserved = mostArray.sort((x, y) => {
+              return x[1] >= y[1];
+            })[0][0];
+            setMostReservedActor(mostReserved);
+          }
         });
       api
         .get(`/reserve/listByProducer/${currentUser.id}`)
         .then((res) => setReserves(res.data));
     }
   }, []);
-  if (!JSON.parse(localStorage.getItem("currentUser"))) {
+
+  if (
+    !!JSON.parse(localStorage.getItem("currentUser")) &&
+    JSON.parse(localStorage.getItem("currentUser")).role === "actor"
+  ) {
     return <Redirect to="" />;
   } else {
     return (
@@ -77,7 +85,8 @@ const MeuPerfilProdutor = (props) => {
                   <p>Ator Mais Reservado: {mostReservedActor}</p>
                   <p>
                     Data Mais Reservada:{" "}
-                    {new Date(mostReservedDate).toLocaleDateString()}
+                    {mostReservedDate &&
+                      new Date(mostReservedDate).toLocaleDateString()}
                   </p>
                 </div>
               </div>

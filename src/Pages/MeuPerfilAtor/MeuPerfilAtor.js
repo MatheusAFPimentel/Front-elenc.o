@@ -15,7 +15,7 @@ const MeuPerfilAtor = (props) => {
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("currentUser"));
-    if (!!user) {
+    if (!!user && user.role !== "producer") {
       setActor(user);
       api
         .get(`/reserve/listByActress/${user.id}`)
@@ -25,7 +25,11 @@ const MeuPerfilAtor = (props) => {
         .catch((err) => alert(err));
     }
   }, []);
-  if (!JSON.parse(localStorage.getItem("currentUser"))) {
+
+  if (
+    !!JSON.parse(localStorage.getItem("currentUser")) &&
+    JSON.parse(localStorage.getItem("currentUser")).role === "producer"
+  ) {
     return <Redirect to="" />;
   } else {
     return (

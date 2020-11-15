@@ -95,7 +95,10 @@ const ProducerHome = (props) => {
   function handleDateSelect(e) {
     setDate(e.target.value);
   }
-  if (!JSON.parse(localStorage.getItem("currentUser"))) {
+  if (
+    !!JSON.parse(localStorage.getItem("currentUser")) &&
+    JSON.parse(localStorage.getItem("currentUser")).role === "actor"
+  ) {
     return <Redirect to="" />;
   } else {
     return (
