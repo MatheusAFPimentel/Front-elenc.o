@@ -55,7 +55,7 @@ const MeuPerfilAtor = (props) => {
             <br />
           </CardText>
           <CardBody id="card_body">
-            <Link to="/actor/edit/profile" className="btn-alterar_perfil">
+            <Link to="/edit/profile" className="btn-alterar_perfil">
               Alterar perfil
             </Link>
           </CardBody>
