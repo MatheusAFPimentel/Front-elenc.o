@@ -3,7 +3,6 @@ import "./home.css";
 import logo from "../../assets/images/logo.svg";
 import { useHistory, Link } from "react-router-dom";
 import { findUser } from "../../services/helpers/findUser";
-// import { getLogin } from "../../assets/fakedata/api";
 
 function Home() {
   const [email, setEmail] = useState("");
@@ -36,17 +35,6 @@ function Home() {
     } else {
       setLoginErr(userFound.err);
     }
-
-    // ? Com fake API:
-    // getLogin(email, password)
-    //   .then((data) => {
-    //     if (data.role === "producer") {
-    //       history.push("/busca");
-    //     } else {
-    //       history.push("/actor/profile");
-    //     }
-    //   })
-    //   .catch((err) => setLoginErr(err));
   };
 
   return (

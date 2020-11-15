@@ -1,8 +1,6 @@
 import "./index.css";
 import { FaSearch, FaArrowUp, FaArrowDown } from "react-icons/fa";
 import { useState } from "react";
-//fake data api
-// import { getActors } from "../../assets/fakedata/api";
 import CardAtores from "../../Components/CardsAtores/CardsAtores";
 import api from "../../services/api";
 
@@ -18,9 +16,6 @@ const ProducerHome = (props) => {
   function handleSubmit(event) {
     setSearch([]);
     event.preventDefault();
-    // getActors.then((data) => {
-    //   setSearch(data);
-    // });
     const savedActors = JSON.parse(localStorage.getItem("actors")).map(
       (actor) => actor.id
     );
