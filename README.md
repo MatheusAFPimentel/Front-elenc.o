@@ -15,8 +15,8 @@
 * ReactJs
 * Babel
 * Reactstrap
-* Typescript
 * Prettier
+* Axios
 
 #### :mega: Para realizar nosso fluxo de trabalho, utilizamos Scrum, Figma para prototipação e Trello para organização. Nosso time se estabeleceu da seguinte maneira:
 * Débora - Scrum Master/Dev Team
