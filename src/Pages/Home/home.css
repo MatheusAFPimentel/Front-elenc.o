@@ -76,6 +76,10 @@
   text-transform: uppercase;
 }
 
+.link_cadastro:hover {
+  color: #d44d5c;
+}
+
 .container_cadastro {
   display: flex;
   flex-direction: row;

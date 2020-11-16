@@ -165,12 +165,12 @@ export default function Cadastro() {
 
           {role === "actor" && (
             <>
-              <label className="label_cadastro-produtor">Sexo:</label>
+              <label className="label_cadastro-produtor">Gênero:</label>
               <input
                 onChange={handleChange}
                 className="input_cadastro-produtor"
                 type="text"
-                placeholder="Masculino, Feminino, Outros"
+                placeholder="Masculino, Feminino, não binário"
                 required
                 name="gender"
                 value={form?.gender}
@@ -186,13 +186,13 @@ export default function Cadastro() {
                 value={form?.price}
               />
               <label className="label_cadastro-produtor">
-                Genero que atua:
+                Gêneros em que atua:
               </label>
               <input
                 onChange={handleChange}
                 className="input_cadastro-produtor"
                 type="text"
-                placeholder="Drama, Comédia"
+                placeholder="Drama, Comédia (separados por vírgula)"
                 required
                 name="genre"
                 value={form?.genre}

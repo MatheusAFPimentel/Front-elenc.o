@@ -43,22 +43,22 @@ const MeuPerfilAtor = (props) => {
           <div className="card_expand">
             <CardTitle>
               <h2>
-                <MdPerson />
+                <MdPerson className="ator_icon"/>
                 {actor?.name}
               </h2>
             </CardTitle>
             <hr />
             <CardText>
-              <FaPersonBooth />
+              <FaPersonBooth className="ator_icon" />
               Gênero: {actor?.gender}
               <br />
-              <FaTheaterMasks />
+              <FaTheaterMasks className="ator_icon" />
               Atuação: {actor?.genre}
               <br />
-              <GiMoneyStack />
+              <GiMoneyStack className="ator_icon" />
               Cachê: R${parseFloat(actor?.price).toLocaleString()}
               <br />
-              <HiMail />
+              <HiMail className="ator_icon" />
               Contato: {actor.user?.login}
               <br />
             </CardText>
@@ -72,24 +72,24 @@ const MeuPerfilAtor = (props) => {
 
         <div className="reservas-grid">
           {reserves.length === 0 ? (
-            <Card>
+            <Card id="card_reserva">
               <CardText>Você não possui reservas</CardText>
             </Card>
           ) : (
             reserves.map((reserve, index) => (
               <Card id="card_reserva" key={reserve.id}>
-                <div className="card_expand">
+                <div className="card_expand_reserva">
                   <CardBody id="card_body">
+                    <h2>Suas reservas</h2>
+                    <hr />
                     <header>
-                      <span>
-                        <FcCalendar />
+                        <FcCalendar className="ator_icon" />
                         Data reservada:{" "}
                         {new Date(reserve.reserveDate).toLocaleDateString()}
-                      </span>
                       <hr />
                     </header>
                     <CardText>
-                      <span>Produtor da Obra: {reserve.producer.name}</span>
+                      Produtor da Obra: {reserve.producer.name}
                     </CardText>
                   </CardBody>
                 </div>

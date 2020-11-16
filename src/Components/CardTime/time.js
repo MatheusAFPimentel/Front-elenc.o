@@ -3,7 +3,7 @@ const time = [
     nome: "Daniel Carvalho",
     imagem: require("./daniel.jpg").default,
     github: "https://github.com/danielbpc2",
-    funcao: "Back-end e React componenets",
+    funcao: "Back-end e React components",
   },
 
   {
