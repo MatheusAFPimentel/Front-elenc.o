@@ -15,7 +15,7 @@ const MeuPerfilAtor = (props) => {
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("currentUser"));
-    if (!!user && user.role !== "producer") {
+    if (!!user && user?.role !== "producer") {
       setActor(user);
       api
         .get(`/reserve/listByActress/${user.id}`)
@@ -27,10 +27,10 @@ const MeuPerfilAtor = (props) => {
   }, []);
 
   if (
-    !!JSON.parse(localStorage.getItem("currentUser")) &&
-    JSON.parse(localStorage.getItem("currentUser")).role === "producer"
+    !!!JSON.parse(localStorage.getItem("currentUser")) ||
+    JSON.parse(localStorage.getItem("currentUser"))?.role === "producer"
   ) {
-    return <Redirect to="" />;
+    return <Redirect to="/" />;
   } else {
     return (
       <div className="perfil_ator_container">
@@ -72,7 +72,9 @@ const MeuPerfilAtor = (props) => {
 
         <div className="reservas-grid">
           {reserves.length === 0 ? (
-            <CardText>Você não possui reservas</CardText>
+            <Card>
+              <CardText>Você não possui reservas</CardText>
+            </Card>
           ) : (
             reserves.map((reserve, index) => (
               <Card id="card_reserva" key={reserve.id}>

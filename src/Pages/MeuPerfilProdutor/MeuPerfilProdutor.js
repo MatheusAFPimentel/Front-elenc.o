@@ -16,7 +16,7 @@ const MeuPerfilProdutor = (props) => {
 
   useEffect(() => {
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-    if (!!currentUser && currentUser.role !== "actor") {
+    if (!!currentUser && currentUser?.role !== "actor") {
       setUser({ ...currentUser });
       api
         .get(`/reserve/getMostReservedDatesByProducer/${currentUser.id}`)
@@ -45,10 +45,9 @@ const MeuPerfilProdutor = (props) => {
         .then((res) => setReserves(res.data));
     }
   }, []);
-
   if (
-    !!JSON.parse(localStorage.getItem("currentUser")) &&
-    JSON.parse(localStorage.getItem("currentUser")).role === "actor"
+    !!!JSON.parse(localStorage.getItem("currentUser")) ||
+    JSON.parse(localStorage.getItem("currentUser"))?.role === "actor"
   ) {
     return <Redirect to="" />;
   } else {
